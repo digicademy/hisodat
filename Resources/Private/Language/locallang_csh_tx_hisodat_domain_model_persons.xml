@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_persons</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_persons</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="gnd.description">Person norm data identifier from the German national library (GND)</label>
+            <label index="gender.description">The gender of the person</label>
+            <label index="name.description">The name of the person</label>
+            <label index="name_variants.description">Any name variants for the person</label>
+            <label index="titles.description">Any titles the person has</label>
+            <label index="description.description">Description or biographical information of the person</label>
+            <label index="images.description">Images of the person</label>
+            <label index="date_range.description">Life dates for the person</label>
+            <label index="relations.description">Persons have relations to the sources in which they appear</label>
+            <label index="keywords.description">Keywords can be used to group persons together</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="gnd.description">GND Nummer der Deutschen Nationalbibliothek</label>
+            <label index="gender.description">Das Geschlecht der Person</label>
+            <label index="name.description">Der Name der Person</label>
+            <label index="name_variants.description">Namensvarianten für diese Person</label>
+            <label index="titles.description">(Adels-)titel für diese Person</label>
+            <label index="description.description">Genauere biographische Informationen zu dieser Person</label>
+            <label index="images.description">Bilder der Person</label>
+            <label index="date_range.description">Lebensdaten</label>
+            <label index="relations.description">Personen stehen in Beziehung zu den Quellen, in denen Sie auftauchen</label>            
+            <label index="keywords.description">Personen können durch die Zuordnung von Schlagworten genauer beschrieben oder gruppiert werden</label>
+        </languageKey>        
+    </data>
+</T3locallang>

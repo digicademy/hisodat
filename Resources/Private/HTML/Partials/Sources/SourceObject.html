@@ -1,0 +1,154 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{source}">
+
+	<f:if condition="{source.title}">
+		<p><strong><f:translate key="sources.labels.title" />:</strong> {source.title}</p>
+	</f:if>
+
+	<h2>{source.identifier}</h2>
+
+	<f:if condition="{source.persistentIdentifier}">
+		<p><strong><f:translate key="sources.labels.persistentIdentifier" />:</strong> {source.persistentIdentifier}</p>
+	</f:if>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.general" /></h3>
+
+		<f:if condition="{source.urn}">
+			<p><strong><f:translate key="sources.labels.urn" />:</strong> {source.urn}</p>
+		</f:if>
+
+		<f:if condition="{source.dateRange}">
+			<p><strong><f:translate key="sources.labels.dateRange" />:</strong> {source.timeInformation.dateComment}</p>
+		</f:if>
+
+		<f:if condition="{source.archive}">
+			<f:render partial="Sources/SourceArchivalInformation" arguments="{source : source}" />
+		</f:if>
+
+		<f:if condition="{source.description}">
+			<p><strong><f:translate key="sources.labels.description" />:</strong></p>
+			<f:format.html>{source.description}</f:format.html>
+		</f:if>
+	</div>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.text" /></h3>
+
+		<f:if condition="{source.incipit}">
+			<p><strong><f:translate key="sources.labels.incipit" />:</strong></p>
+			<f:format.html>{source.incipit}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.transcription}">
+			<p><strong><f:translate key="sources.labels.transcription" />:</strong></p>
+			<f:format.html>{source.transcription}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.translation}">
+			<p><strong><f:translate key="sources.labels.translation" />:</strong></p>
+			<f:format.html>{source.translation}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.versoNote}">
+			<p><strong><f:translate key="sources.labels.versoNote" />:</strong></p>
+			<f:format.html>{source.versoNote}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.annotations}">
+			<p><strong><f:translate key="sources.labels.annotations" />:</strong></p>
+			<f:format.html>{source.annotations}</f:format.html>
+		</f:if>
+
+	</div>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.contents" /></h3>
+
+		<f:if condition="{source.abstract}">
+			<p><strong><f:translate key="sources.labels.abstract" />:</strong></p>
+			<f:format.html>{source.abstract}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.summary}">
+			<p><strong><f:translate key="sources.labels.summary" />:</strong></p>
+			<f:format.html>{source.summary}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.commentary}">
+			<p><strong><f:translate key="sources.labels.commentary" />:</strong></p>
+			<f:format.html>{source.commentary}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.footnotes}">
+			<p><strong><f:translate key="sources.labels.footnotes" />:</strong></p>
+			<f:format.html>{source.footnotes}</f:format.html>
+		</f:if>
+
+		<f:if condition="{source.literature}">
+			<p><strong><f:translate key="sources.labels.literature" />:</strong></p>
+			<f:format.html>{source.literature}</f:format.html>
+		</f:if>
+	</div>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.meta" /></h3>
+
+		<f:if condition="{source.index}">
+			<f:render partial="Sources/SourceIndex" arguments="{index : source.index}" />
+		</f:if>
+
+		<f:if condition="{source.index.localities}">
+			<p><strong><f:translate key="localities.labels.map" />:</strong></p>
+			<h:leaflet objects="{0 : source.index.localities}" coordinatesProperty="geodata" zoom="7" setView="50.0,8.0" mapHeight="180" />
+		</f:if>
+	</div>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.editorial" /></h3>
+
+		<p><strong><f:translate key="sources.labels.editorComments" />:</strong></p>
+		<f:if condition="{source.editorComments}">
+			<f:then>
+				<f:format.html>{source.editorComments}</f:format.html>
+			</f:then>
+			<f:else>
+				<p><f:translate key="errors.noInformation" /></p>
+			</f:else>
+		</f:if>
+	</div>
+
+	<hr />
+
+	<div>
+		<h3><f:translate key="sources.labels.media" /></h3>
+
+		<p><strong><f:translate key="sources.labels.images" />:</strong></p>
+
+		<f:if condition="{source.images}">
+			<f:then>
+				<f:cObject typoscriptObjectPath="lib.tx_hisodat.html.thumbnails" data="{images : source.images, listNum : 'all'}" />
+			</f:then>
+			<f:else>
+				<p><f:translate key="errors.none" /></p>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{source.imageCaptions}">
+			<p><strong><f:translate key="sources.labels.imageCaptions" />:</strong></p>
+			<f:format.html>{source.imageCaptions}</f:format.html>
+		</f:if>
+	</div>
+
+</f:if>

@@ -1,0 +1,25 @@
+<f:if condition="{source}">
+
+    <f:render partial="Sources/Did" arguments="{source : source}" />
+    
+    <f:render partial="Sources/Otherfindaid" />
+    
+    <f:render partial="Sources/Notarialsub" />
+    
+    <f:if condition="{source.transmissionInformation}">
+        <f:render partial="Sources/Scopecontent" arguments="{transmissionInformation : source.transmissionInformation}" />
+    </f:if>
+    
+    <f:render partial="Sources/Diplomaticanalysis" />
+    
+    <f:render partial="Sources/Altformavail" />
+    
+    <f:render partial="Sources/Bibliography" />
+    
+    <f:render partial="Sources/Notes" />            
+    
+    <f:if condition="{source.index}">
+        <f:render partial="Sources/Index" arguments="{persons : source.index.persons, localities : source.index.localities, entities : source.index.entities}" />            
+    </f:if>
+
+</f:if>

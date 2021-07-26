@@ -1,0 +1,16 @@
+[globalVar = GP : type = 2008]
+
+# set the view directories
+plugin.tx_hisodat.view {
+    layoutRootPaths.0 = EXT:hisodat/Resources/Private/KML/Layouts/
+    partialRootPaths.0 = EXT:hisodat/Resources/Private/KML/Partials/
+    templateRootPaths.0 = EXT:hisodat/Resources/Private/KML/Templates/
+}
+
+plugin.tx_hisodat_registers.settings.mode = 20
+
+# disable outer wraps for tt_content
+tt_content.stdWrap >
+lib.stdheader >
+
+[global]

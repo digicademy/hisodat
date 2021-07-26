@@ -1,0 +1,33 @@
+{
+  "name": "digicademy/hisodat",
+  "type": "typo3-cms-extension",
+  "description": "Manage and present historical sources with TYPO3",
+  "homepage": "https://www.digitale-akademie.de",
+  "authors": [
+    {
+      "name": "Torsten Schrade",
+      "email": "Torsten.Schrade@adwmainz.de",
+      "role": "Developer",
+      "homepage": "https://www.adwmainz.de"
+    }
+  ],
+  "license": ["GPL-2.0+"],
+  "keywords": ["TYPO3", "History", "Digital Humanities"],
+  "support": {
+    "issues": "https://github.com/digicademy/hisodat/issues"
+  },
+  "version": "3.0.0",
+  "require": {
+    "typo3/cms-core": ">=9.5.0 || <=10.4.99",
+    "voku/simple_html_dom": "*",
+    "voku/portable-utf8": "*"
+  },
+  "replace": {
+    "typo3-ter/hisodat": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "ADWLM\\Hisodat\\": "Classes/"
+    }
+  }
+}

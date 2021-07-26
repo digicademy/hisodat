@@ -1,0 +1,159 @@
+TCEFORM {
+
+    tx_hisodat_domain_model_sources {
+
+        archive.PAGE_TSCONFIG_IDLIST < tx_hisodat.ARCHIVES_PIDLIST    
+        archive.config.wizards.add.params.pid < tx_hisodat.ARCHIVES_PIDLIST
+
+        keywords.PAGE_TSCONFIG_IDLIST < tx_hisodat.KEYWORDS_PIDLIST
+        keywords.config.wizards.add.params.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+#        editor.PAGE_TSCONFIG_IDLIST = 1
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_persons {
+
+        keywords.PAGE_TSCONFIG_IDLIST < tx_hisodat.KEYWORDS_PIDLIST
+        keywords.config.wizards.add.params.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_events {
+
+        keywords.PAGE_TSCONFIG_IDLIST < tx_hisodat.KEYWORDS_PIDLIST
+        keywords.config.wizards.add.params.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_entities {
+
+        keywords.PAGE_TSCONFIG_IDLIST < tx_hisodat.KEYWORDS_PIDLIST
+        keywords.config.wizards.add.params.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_localities {
+
+        keywords.PAGE_TSCONFIG_IDLIST < tx_hisodat.KEYWORDS_PIDLIST
+        keywords.config.wizards.add.params.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_relations {
+
+        source.PAGE_TSCONFIG_IDLIST < tx_hisodat.SOURCES_PIDLIST
+        source.config.wizards.add.params.pid < tx_hisodat.SOURCES_PIDLIST
+        source.config.wizards.list.params.pid < tx_hisodat.SOURCES_PIDLIST
+        source.suggest.default.pidList < tx_hisodat.SOURCES_PIDLIST
+
+        person.PAGE_TSCONFIG_IDLIST < tx_hisodat.PERSONS_PIDLIST
+        person.config.wizards.add.params.pid < tx_hisodat.PERSONS_PIDLIST
+        person.config.wizards.list.params.pid < tx_hisodat.PERSONS_PIDLIST
+        person.suggest.default.pidList < tx_hisodat.PERSONS_PIDLIST
+
+        locality.PAGE_TSCONFIG_IDLIST < tx_hisodat.LOCALITIES_PIDLIST
+        locality.config.wizards.add.params.pid < tx_hisodat.LOCALITIES_PIDLIST
+        locality.config.wizards.list.params.pid < tx_hisodat.LOCALITIES_PIDLIST
+        locality.suggest.default.pidList < tx_hisodat.LOCALITIES_PIDLIST
+
+        entity.PAGE_TSCONFIG_IDLIST < tx_hisodat.ENTITIES_PIDLIST
+        entity.config.wizards.add.params.pid < tx_hisodat.ENTITIES_PIDLIST
+        entity.config.wizards.list.params.pid < tx_hisodat.ENTITIES_PIDLIST
+        entity.suggest.default.pidList < tx_hisodat.ENTITIES_PIDLIST
+
+        event.PAGE_TSCONFIG_IDLIST < tx_hisodat.EVENTS_PIDLIST
+        event.config.wizards.add.params.pid < tx_hisodat.EVENTS_PIDLIST
+        event.config.wizards.list.params.pid < tx_hisodat.EVENTS_PIDLIST
+        event.suggest.default.pidList < tx_hisodat.EVENTS_PIDLIST
+
+        source_symmetric.PAGE_TSCONFIG_IDLIST < tx_hisodat.SOURCES_PIDLIST
+        source_symmetric.config.wizards.add.params.pid < tx_hisodat.SOURCES_PIDLIST
+        source_symmetric.config.wizards.list.params.pid < tx_hisodat.SOURCES_PIDLIST
+        source_symmetric.suggest.default.pidList < tx_hisodat.SOURCES_PIDLIST
+
+        person_symmetric.PAGE_TSCONFIG_IDLIST < tx_hisodat.PERSONS_PIDLIST
+        person_symmetric.config.wizards.add.params.pid < tx_hisodat.PERSONS_PIDLIST
+        person_symmetric.config.wizards.list.params.pid < tx_hisodat.PERSONS_PIDLIST
+        person_symmetric.suggest.default.pidList < tx_hisodat.PERSONS_PIDLIST
+
+        locality_symmetric.PAGE_TSCONFIG_IDLIST < tx_hisodat.LOCALITIES_PIDLIST
+        locality_symmetric.config.wizards.add.params.pid < tx_hisodat.LOCALITIES_PIDLIST
+        locality_symmetric.config.wizards.list.params.pid < tx_hisodat.LOCALITIES_PIDLIST
+        locality_symmetric.suggest.default.pidList < tx_hisodat.LOCALITIES_PIDLIST
+
+        entity_symmetric.PAGE_TSCONFIG_IDLIST < tx_hisodat.ENTITIES_PIDLIST
+        entity_symmetric.config.wizards.add.params.pid < tx_hisodat.ENTITIES_PIDLIST
+        entity_symmetric.config.wizards.list.params.pid < tx_hisodat.ENTITIES_PIDLIST
+        entity_symmetric.suggest.default.pidList < tx_hisodat.ENTITIES_PIDLIST
+
+        event_symmetric.PAGE_TSCONFIG_IDLIST < tx_hisodat.EVENTS_PIDLIST
+        event_symmetric.config.wizards.add.params.pid < tx_hisodat.EVENTS_PIDLIST
+        event_symmetric.config.wizards.list.params.pid < tx_hisodat.EVENTS_PIDLIST
+        event_symmetric.suggest.default.pidList < tx_hisodat.EVENTS_PIDLIST
+
+        role.PAGE_TSCONFIG_IDLIST < tx_hisodat.MM_PID
+        role.config.wizards.add.params.pid < tx_hisodat.MM_PID
+        role.config.wizards.list.params.pid < tx_hisodat.MM_PID
+        role.suggest.default.pidList < tx_hisodat.MM_PID
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_archives {
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_keywords {
+
+        persistent_identifier.generateUuid = 1
+
+    }
+
+    tx_hisodat_domain_model_roles {
+
+        persistent_identifier.generateUuid = 1
+
+    }
+}
+
+TCAdefaults {
+
+    # specify pages where new records are stored
+
+    tx_hisodat_domain_model_sources.pid < tx_hisodat.SOURCES_PIDLIST
+
+    tx_hisodat_domain_model_localities.pid < tx_hisodat.LOCALITIES_PIDLIST
+
+    tx_hisodat_domain_model_entites.pid < tx_hisodat.ENTITIES_PIDLIST
+
+    tx_hisodat_domain_model_events.pid < tx_hisodat.EVENTS_PIDLIST
+
+    tx_hisodat_domain_model_persons.pid < tx_hisodat.PERSONS_PIDLIST
+
+    tx_hisodat_domain_model_keywords.pid < tx_hisodat.KEYWORDS_PIDLIST
+
+    tx_hisodat_domain_model_archives.pid < tx_hisodat.ARCHIVES_PIDLIST
+
+    tx_hisodat_domain_model_dateranges.pid < tx_hisodat.MM_PID
+
+    tx_hisodat_domain_model_geodata.pid < tx_hisodat.MM_PID
+
+    tx_hisodat_domain_model_roles.pid < tx_hisodat.MM_PID
+
+    tx_hisodat_domain_model_relations.pid < tx_hisodat.MM_PID
+    tx_hisodat_domain_model_relations.relation_type = 0
+}

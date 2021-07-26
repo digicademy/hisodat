@@ -1,0 +1,35 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{arguments.searchMode} > 0">
+
+	<f:then>
+		<f:alias map="{params : {
+			query : arguments.query,
+			itemsPerPage : settings.itemsPerPage,
+			orderBy : settings.orderBy,
+			ascDesc : settings.ascDesc,
+			searchMode : arguments.searchMode,
+			currentPage : arguments.currentPage
+		}}">
+			<h:merge array1="{params : params}" array2="{null : ''}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="searchresult" arguments="{params}" pageUid="{settings.originPid}" section="hisodat-{source.uid}">
+				{linktext}
+			</f:link.action>
+		</f:alias>
+	</f:then>
+
+	<f:else>
+		<f:alias map="{params : {
+			itemsPerPage : settings.itemsPerPage,
+			orderBy : settings.orderBy,
+			ascDesc : settings.ascDesc,
+			currentPage : arguments.currentPage
+		}}">
+			<h:merge array1="{params : params}" array2="{null : ''}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" arguments="{params}" pageUid="{settings.originPid}" section="hisodat-{source.uid}">
+				{linktext}
+			</f:link.action>
+		</f:alias>
+	</f:else>
+
+</f:if>

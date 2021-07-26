@@ -1,0 +1,60 @@
+<f:if condition="{transmissionInformation.issuers}">
+	<p><strong><f:translate key="roles.labels.issuers" />:</strong></p>
+	<ul>
+		<f:if condition="{transmissionInformation.issuers.persons}">
+			<f:for each="{transmissionInformation.issuers.persons}" as="person">
+				<li>
+					<f:link.action action="show" controller="Persons" pluginName="Registers" arguments="{person : person.uid}" pageUid="{settings.registerPids.persons}">
+						{person.name}
+					</f:link.action>
+				</li>
+			</f:for>
+		</f:if>
+		<f:if condition="{transmissionInformation.issuers.entities}">
+			<f:for each="{transmissionInformation.issuers.entities}" as="entity">
+				<li>
+					<f:link.action action="show" controller="Entities" pluginName="Registers" arguments="{entity : entity.uid}" pageUid="{settings.registerPids.entities}">
+						{entity.name}
+					</f:link.action>
+				</li>
+			</f:for>
+		</f:if>
+	</ul>
+</f:if>
+
+<f:if condition="{transmissionInformation.recipients}">
+	<p><strong><f:translate key="roles.labels.recipients" />:</strong></p>
+	<ul>
+		<f:if condition="{transmissionInformation.recipients.persons}">
+			<f:for each="{transmissionInformation.recipients.persons}" as="person">
+				<li>
+					<f:link.action action="show" controller="Persons" pluginName="Registers" arguments="{person : person.uid}" pageUid="{settings.registerPids.persons}">
+						{person.name}
+					</f:link.action>
+				</li>
+			</f:for>
+		</f:if>
+		<f:if condition="{transmissionInformation.recipients.entities}">
+			<f:for each="{transmissionInformation.recipients.entities}" as="entity">
+				<li>
+					<f:link.action action="show" controller="Entities" pluginName="Registers" arguments="{entity : entity.uid}" pageUid="{settings.registerPids.entities}">
+						{entity.name}
+					</f:link.action>
+				</li>
+			</f:for>
+		</f:if>
+	</ul>
+</f:if>
+
+<f:if condition="{transmissionInformation.issuedPlaces}">
+	<p><strong><f:translate key="roles.labels.issuedPlaces" />:</strong></p>
+	<ul>
+		<f:for each="{transmissionInformation.issuedPlaces}" as="place">
+			<li>
+				<f:link.action action="show" controller="Localities" pluginName="Registers" arguments="{locality : place.uid}" pageUid="{settings.registerPids.localities}">
+					{place.name}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:if>

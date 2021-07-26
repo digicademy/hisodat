@@ -1,0 +1,64 @@
+plugin.tx_hisodat_resolver.settings {
+
+    recordIdentification {
+        Sources.enable = 1
+        Persons.enable = 1
+        Localities.enable = 1
+        Entities.enable = 1
+        Events.enable = 1
+    }
+
+    recordMapping {
+        Sources {
+            actionName = show
+            controllerName = Sources
+            extensionName = hisodat
+            pluginName = sources
+            recordArgumentName = source
+            additionalArguments =
+            pidToPluginPidMapping {
+            }
+        }
+        Persons {
+            actionName = show
+            controllerName = Persons
+            extensionName = hisodat
+            pluginName = registers
+            recordArgumentName = person
+            additionalArguments =
+            pidToPluginPidMapping {
+            }
+        }
+        Localities {
+            actionName = show
+            controllerName = Localities
+            extensionName = hisodat
+            pluginName = registers
+            recordArgumentName = locality
+            additionalArguments =
+            pidToPluginPidMapping {
+            }
+        }
+        Entities {
+            actionName = show
+            controllerName = Entities
+            extensionName = hisodat
+            pluginName = registers
+            recordArgumentName = entity
+            additionalArguments =
+            pidToPluginPidMapping {
+            }
+        }
+        Events {
+            actionName = show
+            controllerName = Events
+            extensionName = hisodat
+            pluginName = registers
+            recordArgumentName = event
+            additionalArguments =
+            pidToPluginPidMapping {
+            }
+        }
+    }
+
+}

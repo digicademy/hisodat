@@ -1,0 +1,44 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+	<f:render partial="Registers/FilterSearch" arguments="{arguments : arguments, errors : errors}" />
+
+	<f:render partial="Registers/FilterAlphabet" arguments="{arguments : arguments}" />
+
+	<f:render partial="General/LinkToFormat" arguments="{arguments : arguments, settings : settings}" />
+
+	<f:if condition="{settings.mode} == 10">
+		<h2><f:translate key="persons" /></h2>
+	</f:if>
+
+	<f:if condition="{settings.mode} == 20">
+		<h2><f:translate key="localities" /></h2>
+		<p>
+			<f:link.action arguments="{filters : {alphabet : {showAll : 1}}}" additionalParams="{type : 2008, pluginUid : settings.pluginUid}" format="kml">
+				<f:translate key="general.labels.kml" />
+			</f:link.action>
+		</p>
+	</f:if>
+
+	<f:if condition="{settings.mode} == 30">
+		<h2><f:translate key="entities" /></h2>
+	</f:if>
+
+	<f:if condition="{settings.mode} == 40">
+		<h2><f:translate key="events" /></h2>
+	</f:if>
+
+	<f:if condition="{settings.mode} == 50">
+		<h2><f:translate key="archives" /></h2>
+	</f:if>
+
+	<f:if condition="{settings.mode} == 60">
+		<h2><f:translate key="registers.keywords" /></h2>
+	</f:if>
+
+	<f:render partial="Registers/Alphabet" arguments="{entries : entries, settings : settings, arguments : arguments}" />
+
+</f:section>

@@ -1,0 +1,3 @@
+<!-- ead:did mit ead:id und ead:unittitle ist obligatorisch und sollte alle angezeigten Quellen gleich sein -->
+<!-- Realisierung beispielsweise durch pagetitle/subtitle der im Plugin angegebenen storage pid -->
+<f:cObject typoscriptObjectPath="lib.tx_hisodat.ead.unit" data="{pids : pids, uid : uid}"/>

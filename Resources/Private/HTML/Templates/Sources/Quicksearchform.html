@@ -1,0 +1,56 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+<h2><f:translate key="sources.searchform.quicksearch" /></h2>
+
+<f:if condition="{errors}">
+	<p class="formerrors"><f:translate key="errors.formerrors" />.</p>
+</f:if>
+
+<f:form action="searchresult" name="quicksearch" enctype="multipart/form-data" method="post" noCacheHash="TRUE" pageUid="{settings.targetPid}">
+	<fieldset>
+
+		<legend><f:translate key="sources.searchform" /></legend>
+
+		<f:if condition="{errors.searchstrings}">
+			<ul>
+				<f:for each="{errors.searchstrings.errors}" as="error">
+					<li class="formerrors"><f:translate key="errors.searchstrings.{error.code}" /></li>
+				</f:for>
+			</ul>
+		</f:if>
+
+		<f:form.hidden name="searchstrings[0][operator]" value="10" />
+
+		<f:form.hidden name="searchstrings[0][type]" value="1" />
+
+		<label for="searchwords"><f:translate key="sources.searchform.quicksearch.searchstring" /></label>
+		<f:form.textfield
+			id="searchwords"
+			name="searchstrings[0][searchwords]"
+			placeholder="{f:translate(key: 'sources.searchform.quicksearch.placeholder')}"
+			value="{arguments.searchstrings.0.searchwords}"
+			class="{f:if(condition: '{errors.searchstrings}', then: 'formerrors', else: 'text')}"
+		/>
+
+		<f:form.hidden name="searchstrings[0][role]" value="0" />
+
+		<label for="submit"><f:translate key="sources.searchform.quicksearch.submit" /></label>
+		<f:form.submit
+			name="submit"
+			id="submit"
+			value="{f:translate(key: 'sources.searchform.quicksearch.submit')}"
+		/>
+
+		<f:form.hidden name="searchMode" value="10" />
+		<f:form.hidden name="originPid" value="{settings.originPid}" />
+
+	</fieldset>
+</f:form>
+
+<p><f:link.action action="searchform" arguments="{searchMode : 20}" pageUid="{settings.targetPid}"><f:translate key="sources.searchform.expertsearch" /></f:link.action></p>
+
+</f:section>

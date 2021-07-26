@@ -1,0 +1,8 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Page/page.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Plugins/setup.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Libraries/parsefuncs.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Libraries/xmlbase.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Libraries/unit.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/Libraries/daogrp.txt">

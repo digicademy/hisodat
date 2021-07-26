@@ -1,0 +1,44 @@
+<f:form action="sort" pageUid="{settings.targetPid}" enctype="multipart/form-data" method="post" section="tx_hisodat">
+	<fieldset>
+		<legend><f:translate key="sources.sortingOptions.legend" /></legend>
+
+		<label for="itemsPerPage"><f:translate key="sources.sortingOptions.itemsPerPage" /></label>
+		<f:form.select id="itemsPerPage" name="itemsPerPage" value="{settings.itemsPerPage}" options="{
+			10 : 10, 
+			20 : 20, 
+			50 : 50, 
+			100 : 100}" 
+		/>
+
+		<label for="orderBy"><f:translate key="sources.sortingOptions.orderBy" /></label>
+		<f:form.select id="orderBy" name="orderBy" value="{settings.orderBy}" options="{
+			10: '{f:translate(key : \'sources.labels.identifier\')}', 
+			20: '{f:translate(key : \'sources.labels.persistentIdentifier\')}', 
+			30: '{f:translate(key : \'sources.labels.urn\')}', 
+			40: '{f:translate(key : \'sources.labels.title\')}', 
+			50: '{f:translate(key : \'sources.labels.sorting\')}', 
+			60: '{f:translate(key : \'sources.labels.signature\')}', 
+			70: '{f:translate(key : \'dateRanges.labels.startDate\')}', 
+			80: '{f:translate(key : \'dateRanges.labels.endDate\')}', 
+			90: '{f:translate(key : \'dateRanges.labels.dateKey\')}'}" 
+		/>
+
+		<label for="ascDesc"><f:translate key="sources.sortingOptions.ascDesc" /></label>
+		<f:form.select id="ascDesc" name="ascDesc" value="{settings.ascDesc}" options="{
+			10: '{f:translate(key : \'sources.sortingOptions.asc\')}', 
+			20: '{f:translate(key : \'sources.sortingOptions.desc\')}'}" 
+		/>
+
+		<label for="submit"><f:translate key="sources.sortingOptions.submit" /></label>
+		<f:form.submit name="submit" id="submit" value="Go" />
+
+		<f:if condition="{settings.pagination.currentPage}">
+			<f:form.hidden name="currentPage" value="{settings.pagination.currentPage}" />
+		</f:if>
+		<f:if condition="{arguments.searchMode}">
+			<f:form.hidden name="searchMode" value="{arguments.searchMode}" />
+			<f:form.hidden name="query" value="{arguments.query}" />
+		</f:if>
+
+	</fieldset>
+</f:form>

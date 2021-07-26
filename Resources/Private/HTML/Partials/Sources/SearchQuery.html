@@ -1,0 +1,78 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{arguments.searchstrings}">
+	<f:then>
+		<f:translate key="sources.searchQuery.searchstrings" />
+		<f:for each="{arguments.searchstrings}" as="searchstrings" iteration="item">
+			<f:if condition="{searchstrings.searchwords}">
+				<f:if condition="{item.isFirst}">
+					<f:then>
+						'{searchstrings.searchwords}'
+					</f:then>
+					<f:else>
+						<f:if condition="{searchstrings.operator} == 10"> <f:translate key="sources.expertsearchform.searchstringoperator.10" /></f:if>
+						<f:if condition="{searchstrings.operator} == 20"> <f:translate key="sources.expertsearchform.searchstringoperator.20" /></f:if>
+						<f:if condition="{searchstrings.operator} == 30"> <f:translate key="sources.expertsearchform.searchstringoperator.30" /></f:if>
+						'{searchstrings.searchwords}'
+					</f:else>
+				</f:if>
+				<f:if condition="{searchstrings.role} > 0">
+					<f:translate key="sources.searchQuery.as" />
+					<h:db uids="{searchstrings.role}" table="tx_hisodat_domain_model_roles" field="name" />
+				</f:if>
+			</f:if>
+		</f:for>
+	</f:then>
+	<f:else>
+		<f:translate key="sources.searchQuery.noSearchstrings" />
+	</f:else>
+</f:if>
+
+<f:if condition="{arguments.keywords}">
+	<f:translate key="sources.searchQuery.keywords" />
+	<f:for each="{h:db(uids : arguments.keywords, table : 'tx_hisodat_domain_model_keywords', field : 'name', forceArrayReturn : 'TRUE')}" as="keyword" iteration="item">
+		<f:if condition="{item.isLast}">
+			<f:then>
+				'{keyword}'
+			</f:then>
+			<f:else>
+				'{keyword}',
+			</f:else>
+		</f:if>
+	</f:for>
+</f:if>
+
+<f:if condition="{arguments.startDate}">
+	<f:then>
+		<f:if condition="{arguments.endDate}">
+			<f:then>
+				<f:translate key="sources.searchQuery.inDateRange" /> <f:translate key="sources.searchQuery.from" /> {arguments.startDate} <f:translate key="sources.searchQuery.to" /> {arguments.endDate}
+			</f:then>
+			<f:else>
+				<f:translate key="sources.searchQuery.inDateRange" /> <f:translate key="sources.searchQuery.from" /> {arguments.startDate}
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:if condition="{arguments.endDate}"> <f:translate key="sources.searchQuery.inDateRange" /> <f:translate key="sources.searchQuery.to" /> {arguments.endDate}</f:if>
+	</f:else>
+</f:if>
+
+<f:if condition="{arguments.pages}">
+	<f:translate key="sources.searchQuery.pages" />
+	<h:implode glue=" {f:translate(key: 'sources.expertsearchform.searchstringoperator.20')} " pieces="{h:db(uids : arguments.pages, table : 'pages', field : 'title', forceArrayReturn : 'TRUE')}" />
+</f:if>
+
+<f:if condition="{arguments.archives}">
+	<f:translate key="sources.searchQuery.archives" />
+	<h:implode glue=" {f:translate(key: 'sources.expertsearchform.searchstringoperator.20')} " pieces="{h:db(uids : arguments.archives, table : 'tx_hisodat_domain_model_archives', field : 'name', forceArrayReturn : 'TRUE')}" />
+</f:if>
+
+<f:if condition="{arguments.signatures}">
+	<f:translate key="sources.searchQuery.signatures" />
+	'{arguments.signatures}'
+</f:if>
+
+<f:if condition="{arguments.onlyWithImages}">
+	<f:translate key="sources.searchQuery.onlyWithImages" />
+</f:if>

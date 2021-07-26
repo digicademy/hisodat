@@ -1,0 +1,71 @@
+#######################################################################
+# SEARCH PLUGIN settings
+#######################################################################
+
+plugin.tx_hisodat_search.settings {
+
+#    recordPids = 
+#    recursive = 
+#    targetPid =
+#    originPid =
+#    orderBy =
+#    ascDesc =
+#    itemsPerPage =
+
+    # standard search mode
+    searchMode = 10
+
+    # fulltext index configuration
+    index {
+        type = mysql
+        mysql {
+            fields {
+                sources (
+                    tx_hisodat_domain_model_sources.identifier,
+                    tx_hisodat_domain_model_sources.title,
+                    tx_hisodat_domain_model_sources.abstract,
+                    tx_hisodat_domain_model_sources.description,
+                    tx_hisodat_domain_model_sources.incipit,
+                    tx_hisodat_domain_model_sources.transcription,
+                    tx_hisodat_domain_model_sources.verso_note,
+                    tx_hisodat_domain_model_sources.translation,
+                    tx_hisodat_domain_model_sources.summary,
+                    tx_hisodat_domain_model_sources.commentary,
+                    tx_hisodat_domain_model_sources.annotations,
+                    tx_hisodat_domain_model_sources.footnotes,
+                    tx_hisodat_domain_model_sources.literature,
+                    tx_hisodat_domain_model_sources.signature,
+                    tx_hisodat_domain_model_sources.archival_history
+                )
+                persons (
+                    tx_hisodat_domain_model_persons.name,
+                    tx_hisodat_domain_model_persons.name_variants,
+                    tx_hisodat_domain_model_persons.titles,
+                    tx_hisodat_domain_model_persons.description
+                )
+                localities (
+                    tx_hisodat_domain_model_localities.name,
+                    tx_hisodat_domain_model_localities.name_variants,
+                    tx_hisodat_domain_model_localities.description
+                )
+                entities (
+                    tx_hisodat_domain_model_entities.name,
+                    tx_hisodat_domain_model_entities.name_variants,
+                    tx_hisodat_domain_model_entities.description
+                )
+                events (
+                    tx_hisodat_domain_model_events.name,
+                    tx_hisodat_domain_model_events.name_variants,
+                    tx_hisodat_domain_model_events.description
+                )
+            }
+        }
+    }
+
+    validation {
+        dateRanges {
+            minDate = 800
+            maxDate = 1600
+        }
+    }
+}

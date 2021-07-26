@@ -1,0 +1,30 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+	<p><f:render partial="Sources/LinkToOrigin" arguments="{arguments : arguments, settings : settings, source : source, linktext : '{f:translate(key: \'links.backToList\')}'}" /></p>
+
+	<p><f:render partial="Sources/RecordRange" arguments="{arguments : arguments, settings : settings}" /></p>
+
+	<f:render partial="Sources/LinkToFormat" arguments="{arguments : arguments, settings : settings}" />
+
+	<f:render partial="Sources/SourcePagination" arguments="{arguments : arguments, settings : settings, source : source}" />
+
+	<f:if condition="{searchData.searchwords}">
+		<f:then>
+			<h:highlight terms="{searchData.searchwords}">
+				<f:render partial="Sources/SourceObject" arguments="{arguments : arguments, settings : settings, source : source}" />
+			</h:highlight>
+		</f:then>
+		<f:else>
+			<f:render partial="Sources/SourceObject" arguments="{arguments : arguments, settings : settings, source : source}" />
+		</f:else>
+	</f:if>
+
+	<f:render partial="Sources/SourcePagination" arguments="{arguments : arguments, settings : settings, source : source}" />
+
+	<p><f:render partial="Sources/LinkToOrigin" arguments="{arguments : arguments, settings : settings, source : source, linktext : '{f:translate(key: \'links.backToList\')}'}" /></p>
+
+</f:section>

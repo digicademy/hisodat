@@ -1,0 +1,52 @@
+<f:if condition="{settings.pagination.total} > 1">
+	<ul class="{f:if(condition: '{classes}', then: '{classes.pagination}', else: 'pagination')}">
+		<f:if condition="{settings.pagination.first} != {source.uid}">
+			<f:then>
+				<li class="{f:if(condition: '{classes}', then: '{classes.first}', else: 'first')}">
+					<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : settings.pagination.first, linktext : '««', class : 'paginationlink'}" />
+				</li>
+			</f:then>
+			<f:else>
+				<li class="{f:if(condition: '{classes}', then: '{classes.first}', else: 'first')}">
+					<f:translate key="pagination.first" />
+				</li>
+			</f:else>
+		</f:if>
+		<f:if condition="{settings.pagination.previous} != {source.uid}">
+			<f:then>
+				<li class="{f:if(condition: '{classes}', then: '{classes.previous}', else: 'previous')}">
+					<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : settings.pagination.previous, linktext : '«', class : 'paginationlink'}" />
+				</li>
+			</f:then>
+			<f:else>
+				<li class="{f:if(condition: '{classes}', then: '{classes.first}', else: 'previous')}">
+					<f:translate key="pagination.previous" />
+				</li>
+			</f:else>
+		</f:if>
+		<f:if condition="{settings.pagination.next} != {source.uid}">
+			<f:then>
+				<li class="{f:if(condition: '{classes}', then: '{classes.next}', else: 'next')}">
+					<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : settings.pagination.next, linktext : '»', class : 'paginationlink'}" />
+				</li>
+			</f:then>
+			<f:else>
+				<li class="{f:if(condition: '{classes}', then: '{classes.next}', else: 'next')}">
+					<f:translate key="pagination.next" />
+				</li>
+			</f:else>
+		</f:if>
+		<f:if condition="{settings.pagination.last} != {source.uid}">
+			<f:then>
+				<li class="{f:if(condition: '{classes}', then: '{classes.last}', else: 'last')}">
+					<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : settings.pagination.last, linktext : '»»', class : 'paginationlink'}" />
+				</li>
+			</f:then>
+			<f:else>
+				<li class="{f:if(condition: '{classes}', then: '{classes.last}', else: 'last')}">
+					<f:translate key="pagination.last" />
+				</li>
+			</f:else>
+		</f:if>
+	</ul>
+</f:if>

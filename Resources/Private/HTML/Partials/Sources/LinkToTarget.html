@@ -1,0 +1,36 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{arguments.searchMode} > 0">
+
+	<f:then>
+		<f:alias map="{params : {
+			searchMode : arguments.searchMode,
+			query : arguments.query,
+			itemsPerPage : settings.itemsPerPage,
+			orderBy : settings.orderBy,
+			ascDesc : settings.ascDesc,
+			currentPage : arguments.currentPage
+		}}">
+			<h:merge array1="{params : params}" array2="{source : source}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'target')}" action="searchdetails" arguments="{params}" pageUid="{settings.targetPid}">
+				{linktext}
+			</f:link.action>
+		</f:alias>
+	</f:then>
+
+	<f:else>
+		<f:alias map="{params : {
+			source : source,
+			itemsPerPage : settings.itemsPerPage,
+			orderBy : settings.orderBy,
+			ascDesc : settings.ascDesc,
+			currentPage : arguments.currentPage
+		}}">
+			<h:merge array1="{params : params}" array2="{source : source}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'target')}" action="show" arguments="{params}" pageUid="{settings.targetPid}">
+				{linktext}
+			</f:link.action>
+		</f:alias>
+	</f:else>
+
+</f:if>

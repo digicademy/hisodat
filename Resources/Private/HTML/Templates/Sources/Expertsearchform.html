@@ -1,0 +1,294 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+	<f:if condition="{errors}">
+		<p class="formerrors"><f:translate key="errors.formerrors" />.</p>
+	</f:if>
+
+	<f:form action="searchresult" name="expertsearch" enctype="multipart/form-data" method="post" noCacheHash="TRUE" pageUid="{settings.targetPid}">
+
+		<fieldset id="fulltext">
+
+			<legend><f:translate key="sources.expertsearchform.fulltext.legend" /></legend>
+
+			<f:if condition="{errors.searchstrings}">
+				<ul>
+				<f:for each="{errors.searchstrings.errors}" as="error">
+					<li class="formerrors"><f:translate key="errors.searchstrings.{error.code}" /></li>
+				</f:for>
+				</ul>
+			</f:if>
+
+			<f:alias map="{loop : {0:'0', 1:'1', 2:'2'}}">
+				<f:for each="{loop}" as="index" iteration="iterator">
+					<div>
+						<f:if condition="{iterator.cycle} == 1">
+							<f:then>
+								<label style="display:none;" for="searchstringoperator0"><f:translate key="sources.expertsearchform.searchstringoperator.label" /></label>
+								<f:form.hidden id="searchstringoperator0" name="searchstrings[0][operator]" value="10" />
+							</f:then>
+							<f:else>
+								<label for="searchstringoperator{index}"><f:translate key="sources.expertsearchform.searchstringoperator.label" /></label>
+								<f:form.select
+									id="searchstringoperator{index}"
+									name="searchstrings[{index}][operator]"
+									value="{f:cObject(typoscriptObjectPath : 'lib.tx_hisodat.html.searchstringvalues', data : {searchstrings : arguments.searchstrings, key : index, argument : 'operator'})}"
+									options="{
+									10: '{f:translate(key: \'sources.expertsearchform.searchstringoperator.10\')}', 
+									20: '{f:translate(key: \'sources.expertsearchform.searchstringoperator.20\')}', 
+									30: '{f:translate(key: \'sources.expertsearchform.searchstringoperator.30\')}'}"
+									class="{f:if(condition: '{errors.searchstrings}', then: 'select formerrors', else: 'select')}"
+								/>
+							</f:else>
+						</f:if>
+
+						<label for="searchstringtype{index}"><f:translate key="sources.expertsearchform.searchstringtype.label" /></label>
+						<f:form.select
+							id="searchstringtype{index}"
+							name="searchstrings[{index}][type]"
+							value="{f:cObject(typoscriptObjectPath : 'lib.tx_hisodat.html.searchstringvalues', data : {searchstrings : arguments.searchstrings, key : index, argument : 'type'})}"
+							options="{
+							1: '{f:translate(key: \'sources.expertsearchform.searchstringtype.1\')}', 
+							2: '{f:translate(key: \'sources.expertsearchform.searchstringtype.2\')}',
+							10: '{f:translate(key: \'sources.expertsearchform.searchstringtype.10\')}',
+							20: '{f:translate(key: \'sources.expertsearchform.searchstringtype.20\')}',
+							30: '{f:translate(key: \'sources.expertsearchform.searchstringtype.30\')}',
+							40: '{f:translate(key: \'sources.expertsearchform.searchstringtype.40\')}'}"
+							class="{f:if(condition: '{errors.searchstrings}', then: 'select formerrors', else: 'select')}"
+						/>
+
+						<label for="searchstringsearchwords{index}"><f:translate key="sources.expertsearchform.searchstringsearchwords.label" /></label>
+						<f:form.textfield
+							id="searchstringsearchwords{index}"
+							name="searchstrings[{index}][searchwords]"
+							placeholder="{f:translate(key: 'sources.expertsearchform.searchstringsearchwords.placeholder')}"
+							value="{f:cObject(typoscriptObjectPath : 'lib.tx_hisodat.html.searchstringvalues', data : {searchstrings : arguments.searchstrings, key : index, argument : 'searchwords'})}"
+							class="{f:if(condition: '{errors.searchstrings}', then: 'text formerrors', else: 'text')}"
+						/>
+
+						<f:if condition="{roles}">
+							<label for="roles"><f:translate key="sources.expertsearchform.role.label" /></label>
+							<f:form.select id="roles"
+								name="searchstrings[{index}][role]"
+								options="{roles}"
+								optionLabelField="name"
+								value="{f:cObject(typoscriptObjectPath : 'lib.tx_hisodat.html.searchstringvalues', data : {searchstrings : arguments.searchstrings, key : index, argument : 'role'})}"
+								class="{f:if(condition: '{errors.searchstrings}', then: 'select formerrors', else: 'select')}"
+							/>
+						</f:if>
+
+					</div>
+				</f:for>
+			</f:alias>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.keywords.legend" /></legend>
+
+			<f:if condition="{errors.keywords}">
+				<ul>
+					<f:for each="{errors.keywords.errors}" as="error">
+						<li class="formerrors"><f:translate key="errors.keywords.{error.code}" /></li>
+					</f:for>
+				</ul>
+			</f:if>
+
+			<label for="keywords"><f:translate key="sources.expertsearchform.keywords.label" /></label>
+			<f:form.select
+				id="keywords"
+				name="keywords"
+				options="{keywords}"
+				value="{arguments.keywords}"
+				optionLabelField="name"
+				multiple="1"
+				class="{f:if(condition: '{errors.keywords}', then: 'select multiple formerrors', else: 'select multiple')}"
+			/>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.datefilter.legend" /></legend>
+
+			<f:if condition="{errors.startDate_endDate}">
+				<ul>
+					<f:for each="{0 : errors.startDate_endDate}" as="error">
+						<li class="formerrors"><f:translate key="errors.startDate_endDate.{error.code}" /></li>
+					</f:for>
+				</ul>
+			</f:if>
+
+			<label for="startDate"><f:translate key="sources.expertsearchform.startDate.label" /></label>
+			<f:form.textfield
+				id="startDate"
+				name="startDate"
+				placeholder="{f:translate(key: 'sources.expertsearchform.startDate.placeholder')}"
+				value="{arguments.startDate}"
+				class="{f:if(condition: '{errors.startDate_endDate}', then: 'text formerrors', else: 'text')}"
+			/>
+
+			<label for="endDate"><f:translate key="sources.expertsearchform.endDate.label" /></label>
+			<f:form.textfield
+				id="endDate"
+				name="endDate"
+				placeholder="{f:translate(key: 'sources.expertsearchform.endDate.placeholder')}"
+				value="{arguments.endDate}"
+				class="{f:if(condition: '{errors.startDate_endDate}', then: 'text formerrors', else: 'text')}"
+			/>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.pages.legend" /></legend>
+
+			<f:if condition="{errors.pages}">
+				<ul>
+					<f:for each="{errors.pages.errors}" as="error">
+						<li class="formerrors"><f:translate key="errors.pages.{error.code}" /></li>
+					</f:for>
+				</ul>
+			</f:if>
+
+			<label for="pages"><f:translate key="sources.expertsearchform.pages.label" /></label>
+			<f:form.select
+				id="pages"
+				name="pages"
+				options="{h:db(uids : settings.recordPids.sources, table : 'pages', field : 'title')}"
+				value="{arguments.pages}"
+				multiple="1"
+				class="{f:if(condition: '{errors.pages}', then: 'select multiple formerrors', else: 'select multiple')}"
+			/>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.archives.legend" /></legend>
+
+			<div>
+
+				<f:if condition="{errors.archives}">
+					<ul>
+						<f:for each="{errors.archives.errors}" as="error">
+							<li class="formerrors"><f:translate key="errors.archives.{error.code}" /></li>
+						</f:for>
+					</ul>
+				</f:if>
+
+				<label for="archives"><f:translate key="sources.expertsearchform.archives.label" /></label>
+				<f:form.select
+					id="archives"
+					name="archives"
+					options="{archives}"
+					value="{arguments.archives}"
+					optionLabelField="name"
+					multiple="1"
+					class="{f:if(condition: '{errors.archives}', then: 'select multiple formerrors', else: 'select multiple')}"
+				/>
+			</div>
+
+			<div>
+
+				<f:if condition="{errors.signatures}">
+					<ul>
+						<f:for each="{errors.signatures.errors}" as="error">
+							<li class="formerrors"><f:translate key="errors.signatures.{error.code}" /></li>
+						</f:for>
+					</ul>
+				</f:if>
+
+				<label for="signatures"><f:translate key="sources.expertsearchform.signatures.label" /></label>
+				<f:form.textfield
+					id="signatures"
+					name="signatures"
+					placeholder="{f:translate(key: 'sources.expertsearch.signatures.placeholder')}"
+					value="{arguments.signatures}"
+					class="{f:if(condition: '{errors.signatures}', then: 'text formerrors', else: 'text')}"
+				/>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.media.legend" /></legend>
+
+			<f:if condition="{errors.onlyWithImages}">
+				<ul>
+					<f:for each="{errors.onlyWithImages.errors}" as="error">
+						<li class="formerrors"><f:translate key="errors.onlyWithImages.{error.code}" /></li>
+					</f:for>
+				</ul>
+			</f:if>
+
+			<label for="onlyWithImages"><f:translate key="sources.expertsearchform.onlyWithImages.label" /></label>
+			<f:form.checkbox
+				id="onlyWithImages"
+				name="onlyWithImages"
+				value="1"
+				checked="{arguments.onlyWithImages}"
+				class="{f:if(condition: '{errors.onlyWithImages}', then: 'formerrors check', else: 'check')}"
+			/>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.sortingOptions.legend"/></legend>
+
+			<label for="itemsPerPage"><f:translate key="sources.sortingOptions.itemsPerPage"/></label>
+			<f:form.select id="itemsPerPage" name="itemsPerPage" value="{settings.itemsPerPage}" options="{
+				10 : 10,
+				20 : 20,
+				50 : 50,
+				100 : 100}"
+			/>
+
+			<label for="orderBy"><f:translate key="sources.sortingOptions.orderBy"/></label>
+			<f:form.select id="orderBy" name="orderBy" value="{settings.orderBy}" options="{
+				10: '{f:translate(key : \'sources.labels.identifier\')}',
+				20: '{f:translate(key : \'sources.labels.persistentIdentifier\')}',
+				30: '{f:translate(key : \'sources.labels.urn\')}',
+				40: '{f:translate(key : \'sources.labels.title\')}',
+				50: '{f:translate(key : \'sources.labels.sorting\')}',
+				60: '{f:translate(key : \'sources.labels.signature\')}',
+				70: '{f:translate(key : \'dateRanges.labels.startDate\')}',
+				80: '{f:translate(key : \'dateRanges.labels.endDate\')}',
+				90: '{f:translate(key : \'dateRanges.labels.dateKey\')}'}"
+			/>
+
+			<label for="ascDesc"><f:translate key="sources.sortingOptions.ascDesc"/></label>
+			<f:form.select id="ascDesc" name="ascDesc" value="{settings.ascDesc}" options="{
+				10: '{f:translate(key : \'sources.sortingOptions.asc\')}',
+				20: '{f:translate(key : \'sources.sortingOptions.desc\')}'}"
+			/>
+
+		</fieldset>
+
+		<fieldset>
+
+			<legend><f:translate key="sources.expertsearchform.searchsubmit.legend" /></legend>
+
+			<label for="submit"><f:translate key="sources.expertsearchform.searchsubmit.label" /></label>
+			<f:form.submit
+				id="submit"
+				name="submit"
+				value="{f:translate(key: 'sources.expertsearchform.searchsubmit.value')}"
+			/>
+
+			<f:form.hidden name="searchMode" value="20" />
+			<f:form.hidden name="originPid" value="{settings.originPid}" />
+
+		</fieldset>
+
+	</f:form>
+
+	<p><f:link.action action="searchform" arguments="{searchMode : 10}" pageUid="{settings.targetPid}"><f:translate key="sources.searchform.quicksearch" /></f:link.action></p>
+
+</f:section>

@@ -1,0 +1,21 @@
+#######################################################################
+# BASIC settings
+#######################################################################
+
+# HTML libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/setup.txt">
+
+# EAD libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/EAD/setup.txt">
+
+# TEI libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/TEI/setup.txt">
+
+# RDF libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/RDF/setup.txt">
+
+# KML libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/KML/setup.txt">
+
+# SITEMAP libraries
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/SITEMAP/setup.txt">

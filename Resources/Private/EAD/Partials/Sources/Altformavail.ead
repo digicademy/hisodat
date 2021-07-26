@@ -1,0 +1,12 @@
+<ead:altformavail encodinganalog="cei:witness">
+    <!-- copies of the current document -->
+    <ead:p altrender="cei:traditioform">Art der Kopie: cop. (allgemein), ins. (insertum/inspeximus) ...</ead:p>
+    <ead:p>
+        <ead:archref>
+            <!-- Die Archivsignatur der Kopie, die als unstrukturierter Fließtext oder strukturiert sich aus-->
+            <ead:repository>Archiv und Archivfonds</ead:repository> 
+            <ead:unitid>Signatur</ead:unitid> 
+                und weitern Angaben (z.B. folio) zusammensetzen kann
+        </ead:archref>
+    </ead:p>    
+</ead:altformavail>

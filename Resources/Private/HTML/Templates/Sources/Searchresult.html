@@ -1,0 +1,48 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+<f:if condition="{sources}">
+
+	<f:then>
+
+		<h4><f:render partial="Sources/SearchQuery" arguments="{arguments : arguments}" /></h4>
+
+		<p><f:render partial="Sources/RecordRange" arguments="{arguments : arguments, settings : settings}" /></p>
+
+		<f:render partial="Sources/LinkToSearchform" arguments="{arguments : arguments, settings : settings}" />
+
+		<f:render partial="Sources/SortingOptions" arguments="{arguments : arguments, settings : settings}" />
+
+		<f:render partial="Sources/LinkToFormat" arguments="{arguments : arguments, settings : settings}" />
+
+		<h:widget.paginate objects="{sources}" as="sourceObjects" arguments="{arguments : arguments, total : settings.pagination.total, settings : settings}" configuration="{itemsPerPage : settings.itemsPerPage, maxPageNumberElements : 10, insertAbove : 1, insertBelow : 1}">
+
+			<f:if condition="{searchData.searchwords}">
+				<f:then>
+					<h:highlight terms="{searchData.searchwords}">
+						<f:render partial="Sources/SourceObjects" arguments="{arguments : arguments, settings : settings, sources : sourceObjects}" />
+					</h:highlight>
+				</f:then>
+				<f:else>
+					<f:render partial="Sources/SourceObjects" arguments="{arguments : arguments, settings : settings, sources : sourceObjects}" />
+				</f:else>
+			</f:if>
+
+		</h:widget.paginate>
+	
+	</f:then>
+
+	<f:else>
+	
+		<p><f:translate key="sources.expertsearchresult.nothingfound" /></p>
+
+	</f:else>
+
+</f:if>
+
+<f:render partial="Sources/LinkToSearchform" arguments="{arguments : arguments, settings : settings}" />
+
+</f:section>

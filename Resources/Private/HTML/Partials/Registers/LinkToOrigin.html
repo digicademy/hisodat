@@ -1,0 +1,43 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{person}">
+	<h:merge array1="{arguments : arguments}" array2="{person : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{person.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{person.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{person.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>
+
+<f:if condition="{locality}">
+	<h:merge array1="{arguments : arguments}" array2="{locality : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{locality.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{locality.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>
+
+<f:if condition="{entity}">
+	<h:merge array1="{arguments : arguments}" array2="{entity : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{entity.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{entity.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>
+
+<f:if condition="{event}">
+	<h:merge array1="{arguments : arguments}" array2="{event : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{event.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{event.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>
+
+<f:if condition="{keyword}">
+	<h:merge array1="{arguments : arguments}" array2="{keyword : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{keyword.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{keyword.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{keyword.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>
+
+<f:if condition="{archive}">
+	<h:merge array1="{arguments : arguments}" array2="{archive : '', formerParentName : '', secondLevelLetter : '', filters : {alphabet : {letterRange : '{archive.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}}, firstLevelLetter : '{archive.name -> f:format.crop(maxCharacters: 1, append : \'\')}'}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+	<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'origin')}" action="list" controller="Registers" arguments="{arguments}" pageUid="{settings.originPid}" section="entry-{keyword.uid}">
+		<f:translate key="links.backToList" />
+	</f:link.action>
+</f:if>

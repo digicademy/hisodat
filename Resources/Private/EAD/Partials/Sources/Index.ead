@@ -1,0 +1,27 @@
+<ead:index>
+
+<f:if condition="{persons}">
+<f:for each="{persons}" as="person">
+    <ead:indexentry>
+        <ead:persname>{person.name}</ead:persname>
+    </ead:indexentry>
+</f:for>
+</f:if>
+
+<f:if condition="{localities}">
+<f:for each="{localities}" as="locality">
+    <ead:indexentry>
+        <ead:geogname>{locality.name}</ead:geogname>
+    </ead:indexentry>
+</f:for>
+</f:if>
+
+<f:if condition="{entities}">
+<f:for each="{entities}" as="entity">
+    <ead:indexentry>
+        <ead:subject>{entity.name}</ead:subject>
+    </ead:indexentry>
+</f:for>
+</f:if>
+
+</ead:index>

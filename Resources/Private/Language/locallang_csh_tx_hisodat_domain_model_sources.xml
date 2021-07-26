@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_sources</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_sources</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="signature.description">The identification string of a source object</label>
+            <label index="signature_addition.description">Additional signature information</label>
+            <label index="urn.description">The unique resource name</label>
+            <label index="abstract.description">A short abstract of the source's content</label>
+            <label index="description.description">A description of the source and/or it's material</label>
+            <label index="transcription.description">A transcript of the source's text</label>
+            <label index="translation.description">The translation of the source's text</label>
+            <label index="summary.description">A detailed summary of the source's content</label>
+            <label index="commentary.description">The commentary for the source</label>
+            <label index="archival_history.description">Information about how the source was kept in the past</label>            
+            <label index="images.description">Image(s) of the source</label>
+            <label index="image_captions.description">Description of the attached image(s)</label>
+            <label index="date_range.description">Each source has to be dated</label>
+            <label index="archive.description">The archive in which the source is currently kept</label>
+            <label index="relations.description">Sources can have relations to persons, localities and entities</label>
+            <label index="keywords.description">Sources can be grouped or categorised by certain keywords</label>
+            <label index="editor.description">The most recent editor of this source record</label>
+            <label index="editor_comments">Editorial comments to this source</label>            
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="signature.description">Die aktuelle Signatur der Quelle im Archiv bzw. eine eindeutige Kennzeichnung</label>
+            <label index="signature_addition.description">Zusätzliche Signaturen oder alte Signaturen</label>
+            <label index="urn.description">Die eindeutige URN bei der Deutschen Nationalbibliothek</label>
+            <label index="abstract.description">Ein Kopfregest oder eine Kurzzusammenfassung der Quelle</label>
+            <label index="translation.description">Die Übersetzung des Quellentextes</label>
+            <label index="summary.description">Vollregest oder detailierte Zusammenfassung des Quelleninhalts</label>            
+            <label index="description.description">Eine genaue Beschreibung der Quelle, des Beschreibstoffes usw.</label>
+            <label index="transcription.description">Die Transkription des Quellentextes</label>
+            <label index="commentary.description">Der wissenschaftliche Kommentar zur Quelle</label>
+            <label index="archival_history.description">Genauere Informationen zur archivalischen Überlieferung der Quelle</label>            
+            <label index="images.description">Digitalisate oder Bilder der Quelle</label>
+            <label index="image_captions.description">Bildunterschriften zu den Digitalisaten</label>
+            <label index="date_range.description">Eine Quelle sollte immer datiert werden</label>
+            <label index="archive.description">Das Archiv in dem sich die Quelle aktuell befindet</label>
+            <label index="relations.description">Einer Quelle könne Personen, Orte und Entitäten zugeordnet werden.</label>
+            <label index="keywords.description">Mit Schlagworten kann die Quelle genauer beschrieben oder klassifiziert werden</label>
+            <label index="editor.description">Der letzte Bearbeiter dieses Quellendatensatzes</label>
+            <label index="editor_comments">Bearbeitungshinweise zur Quelle</label>
+        </languageKey>        
+    </data>
+</T3locallang>

@@ -1,0 +1,7 @@
+<!--optional 1x-->
+<ead:bibliography>
+    <ead:head>Überschrift Bibliographie z.B "Quellen"</ead:head>                   
+    <ead:bibref>Quelle1</ead:bibref>
+    <ead:bibref>Quelle2</ead:bibref>
+    <ead:bibref>Quelle3</ead:bibref>
+</ead:bibliography>

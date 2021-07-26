@@ -1,0 +1,14 @@
+[globalVar = GP : type = 2004]
+
+# set the view directories 
+plugin.tx_hisodat.view {
+    layoutRootPaths.0 = EXT:hisodat/Resources/Private/RDF/Layouts/
+    partialRootPaths.0 = EXT:hisodat/Resources/Private/RDF/Partials/
+    templateRootPaths.0 = EXT:hisodat/Resources/Private/RDF/Templates/
+}
+
+# disable outer wraps for tt_content
+tt_content.stdWrap >
+lib.stdheader >
+
+[global]

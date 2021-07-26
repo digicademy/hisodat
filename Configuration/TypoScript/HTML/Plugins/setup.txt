@@ -1,0 +1,47 @@
+#######################################################################
+# GENERAL PLUGIN settings
+#######################################################################
+
+plugin.tx_hisodat {
+
+#    features.rewrittenPropertyMapper = 0
+
+    settings {
+        recordPids {
+            sources =
+            archives =
+            persons =
+            localities =
+            entities =
+            keywords =
+            roles =
+            events =
+        }
+        registerPids {
+            archives =
+            persons =
+            localities =
+            entities =
+            keywords =
+            events =
+        }
+    }
+
+    view {
+        layoutRootPaths.0 = EXT:hisodat/Resources/Private/HTML/Layouts/
+        partialRootPaths.0 = EXT:hisodat/Resources/Private/HTML/Partials/
+        templateRootPaths.0 = EXT:hisodat/Resources/Private/HTML/Templates/
+    }
+}
+
+# registers plugin configuration
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Plugins/registers.txt">
+
+# search plugin configuration
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Plugins/search.txt">
+
+# sources plugin configuration
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Plugins/sources.txt">
+
+# resolver plugin configuration
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Plugins/resolver.txt">

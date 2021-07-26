@@ -1,0 +1,43 @@
+lib.tx_hisodat.html.thumbnails = COA
+lib.tx_hisodat.html.thumbnails {
+
+    10 = CASE
+    10 {
+
+        key.field = listNum
+
+        all = TEXT
+        all {
+            field = images
+            split {
+                token = ,
+                cObjNum = 1
+                1.cObject = IMAGE
+                1.cObject {
+                    file.import.current = 1
+                    file {
+                        maxW = 80
+                        maxH = 160
+                    }
+                    imageLinkWrap = 1
+                    imageLinkWrap {
+                        enable = 1
+                        typolink.parameter.dataWrap = {current:1} 1000x800
+                        typolink.JSwindow_params = scrollbars=1
+                    }
+                }
+            }
+            
+        }
+
+        default = IMAGE
+        default.file {
+            import {
+                field = images
+                listNum.data = field : listNum
+            }
+            maxW = 80
+            maxH = 160
+        }
+    }
+}

@@ -1,0 +1,39 @@
+rdf = PAGE
+rdf {
+
+    typeNum = 2004
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type:application/rdf+xml
+        admPanel = 0
+        xhtml_cleaning = 0
+        disablePrefixComment = 1
+        debug = 0
+    }
+
+    10 = TEXT
+    10 {
+        value (
+<note>
+    Please call this view using the &amp;pluginUid parameter and the according arguments for the extbase action you would like to execute with this plugin.
+    Example: www.my-site.xy/index.php?type=2004&amp;pluginUid=###PLUGIN_UID###&amp;tx_extbase_extension[controller]=###CONTROLLER###&amp;tx_extbase_extension[format]=rdf
+</note>
+)
+    }
+}
+
+[globalVar = GP : pluginUid > 0]
+rdf.10 >
+rdf {
+    10 = RECORDS
+    10 {
+        source.data = GP:pluginUid
+        source.intval = 1
+        tables = tt_content
+        dontCheckPid = 1
+        conf.tt_content =< tt_content
+        stdWrap.if.isTrue.data = GP:pluginUid
+    }
+}
+[global]

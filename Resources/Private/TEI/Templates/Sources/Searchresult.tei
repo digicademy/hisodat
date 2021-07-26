@@ -1,0 +1,34 @@
+<f:layout name="Document" />
+
+<f:section name="Header">
+
+    <fileDesc>
+        <titleStmt>
+            <title>A TEI P5 Sample File</title>
+        </titleStmt>
+        <publicationStmt>
+            <p>Published as a TEI sample in &lt;oXygen/></p>
+        </publicationStmt>
+        <sourceDesc>
+            <p>Derived from a TEI exercise by Lou Burnard and Sebastian Rahtz. Further modified by Dan Caprioara</p>
+        </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+        <list>
+            <item><date>5 February 2002</date>first attempt</item>
+            <item><date>24 October 2007</date>modified by Dan</item>
+        </list>
+    </revisionDesc>
+    
+</f:section>
+
+<f:section name="Body">
+
+    <f:for each="{sources}" as="source">
+        <div>
+            <head>{source.identifier}</head>
+            <p>TO BE CONTINUED...</p>
+        </div>
+    </f:for>
+
+</f:section>

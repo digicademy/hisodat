@@ -1,0 +1,24 @@
+<ead:bibliography encodinganalog="cei:listBibl"> 
+    <ead:bibref>meineLiteratur_allgemein1</ead:bibref>
+    <ead:bibref>meineLiteratur_allgemein2</ead:bibref>
+</ead:bibliography>
+<ead:bibliography encodinganalog="cei:listBiblEditionsRegesta">
+    <ead:bibref>meineEditionen_Regest1</ead:bibref>
+    <ead:bibref>meineEditionen_Regest2</ead:bibref>
+</ead:bibliography>
+<ead:bibliography encodinganalog="cei:listBiblEditions">
+    <ead:bibref>meineEdition 1</ead:bibref>
+    <ead:bibref>meineEdition 2</ead:bibref>
+</ead:bibliography>
+<ead:bibliography encodinganalog="cei:listBiblRegesta">
+    <ead:bibref>meinRegest1</ead:bibref>
+    <ead:bibref>meineRegest2</ead:bibref>
+</ead:bibliography>
+<ead:bibliography encodinganalog="cei:listBiblStudies">
+    <ead:bibref>meineSekundaerliteratur1</ead:bibref>
+    <ead:bibref>meineSekundaerliteratur2</ead:bibref>
+</ead:bibliography>
+<ead:bibliography encodinganalog="cei:listBiblFacsimile"> 
+    <ead:bibref>meineAbbildung1</ead:bibref>
+    <ead:bibref>meineAbbildung2</ead:bibref>
+</ead:bibliography>

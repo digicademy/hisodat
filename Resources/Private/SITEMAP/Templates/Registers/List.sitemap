@@ -1,0 +1,15 @@
+<f:layout name="Document" />
+
+<f:section name="Body">
+
+    <f:for each="{entries}" as="entry">
+        <url>
+            <f:if condition="{settings.mode} == 10">
+                <loc><f:uri.action action="show" controller="Persons" arguments="{person : entry}" pageUid="{settings.targetPid}" /></loc>
+            </f:if>
+            <changefreq>yearly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    </f:for>
+
+</f:section>

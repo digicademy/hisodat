@@ -1,0 +1,42 @@
+lib.tx_hisodat.ead.daogrp = COA
+lib.tx_hisodat.ead.daogrp {
+
+    stdWrap.wrap = <ead:daogrp> | </ead:daogrp>
+    stdWrap.if.isTrue.field = images
+    
+    10 = TEXT
+    10 {
+        field = images
+        split {
+            token = ,
+            cObjNum = 1
+
+            1 {
+
+                10 = LOAD_REGISTER
+                10.caption.cObject = TEXT
+                10.caption.cObject {
+                    field = captions
+                    listNum.stdWrap.data = register:SPLIT_COUNT
+                }
+
+                20 = TEXT
+                20 {
+                    current = 1
+                    wrap = <ead:daoloc xlink:href="|">
+                
+                }
+
+                30 = TEXT
+                30 {
+                    data = register:caption
+                    outerWrap = <ead:daodesc><ead:p> | </ead:p></ead:daodesc>
+                    outerWrap.if.isTrue.data = register:caption        
+                }
+
+                40 = TEXT
+                40.value = </ead:daoloc>    
+            }
+        }
+    }
+}

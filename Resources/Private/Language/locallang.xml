@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for the Historical Sources Online Database extension in the FRONTEND</description>
+    </meta>
+    <data type="array">
+
+        <languageKey index="default" type="array">
+        </languageKey>
+
+        <languageKey index="de" type="array">
+
+            <!-- ERRORS -->
+
+            <label index="errors.noInformation">Keine Informationen</label>
+            <label index="errors.noData">Keine Daten</label>
+            <label index="errors.none">Keine</label>
+            <label index="errors.noTransmissionInformation">Ohne Aussteller, Empfänger und Empfangsort</label>
+            <label index="errors.formerrors">Ihre Sucheingaben enthalten Fehler. Bitte korrigieren Sie die markierten Eingaben</label>
+            <label index="errors.searchstrings.1322671441">Suchbegriffe enthalten ungültige Zeichen</label>
+            <label index="errors.searchstrings.1323057652">Suchbegriffe müssen mindestens drei Zeichen lang sein</label>
+            <label index="errors.searchstrings.1322670699">Keine gültige Typenauswahl für die Volltextsuche</label>
+            <label index="errors.searchstrings.1364277275">Suchbegriffe dürfen nicht leer sein</label>
+            <label index="errors.searchstrings.1322670699">Ungültiger boolscher Operator</label>
+            <label index="errors.searchstrings.1364681390">Ungültiger Wert für abgefragte Rolle</label>
+            <label index="errors.searchstrings.1322670699">Ungültiges Format für Suchbegriffe</label>
+            <label index="errors.searchstrings.1322670430">Ungültiges Format für Suchbegriffe</label>
+            <label index="errors.startDate_endDate.1323215068">Ungültiges Jahr: Der Wert muss zwischen 400 und 1600 liegen</label>
+            <label index="errors.startDate_endDate.1323215239">Ungültiger Monat: Der Wert muss zwischen 0 und 12 liegen</label>
+            <label index="errors.startDate_endDate.1323215301">Ungültiger Tag: Der Wert muss zwischen 0 und 31 liegen</label>
+            <label index="errors.startDate_endDate.1323214434">Das Datumsformat ist ungültig</label>
+            <label index="errors.startDate_endDate.1323062924">Das Datumsformat ist ungültig. Es dürfen nur Zahlen und Bindestriche benutzt werden</label>
+            <label index="errors.startDate_endDate.1322607720">Angegebener Endtag liegt nach dem Anfangstag</label>
+            <label index="errors.startDate_endDate.1322607733">Gleiche Werte für Jahre und Monate. Bitte geben Sie noch den Anfangs- und Endtag an</label>
+            <label index="errors.startDate_endDate.1322607742">Der angegebene Startmonat liegt nach dem Endmonat</label>
+            <label index="errors.startDate_endDate.1322607751">Gleiche Werte für Anfangs- und Endjahr. Bitte geben Sie noch die Anfangs- und Endmonate bzw. -tage an</label>
+            <label index="errors.startDate_endDate.1322607759">Das angegebene Startjahr liegt nach dem Endjahr</label>
+            <label index="errors.keywords.1323195236">Ungültiges Werteformat</label>
+            <label index="errors.pages.1323195236">Ungültiges Werteformat</label>
+            <label index="errors.archives.1323195236">Ungültiges Werteformat</label>
+            <label index="errors.signatures.1221565130">Signaturfeld enthält ungültige Zeichen</label>
+            <label index="errors.onlyWithImages.1323195236">Ungültiges Werteformat</label>
+
+            <!-- LINKS -->
+
+            <label index="links.showDetails">Details</label>
+            <label index="links.backToList">Zurück zur Übersicht</label>
+            <label index="links.newSearch">Neue Suche</label>
+            <label index="links.modifySearch">Suche modifizieren</label>
+            <label index="links.reset">Reset</label>
+            <label index="links.showAll">Alle anzeigen</label>
+
+            <!-- PAGINATION -->
+
+            <label index="pagination.first">««</label>
+            <label index="pagination.previous">«</label>
+            <label index="pagination.next">»</label>
+            <label index="pagination.last">»»</label>
+
+            <!-- GENERAL -->
+
+            <label index="general.labels.gnd">GND</label>
+            <label index="general.labels.tei">TEI</label>
+            <label index="general.labels.ead">EAD</label>
+            <label index="general.labels.rdf">RDF</label>
+            <label index="general.labels.kml">KML</label>
+            <label index="general.labels.sitemap">SITEMAP</label>
+
+            <!-- SOURCES -->
+
+            <label index="sources">Quellen</label>
+
+            <label index="sources.searchform">Quellensuche</label>
+            <label index="sources.searchform.quicksearch">Schnellsuche</label>
+            <label index="sources.searchform.quicksearch.placeholder">Suchbegriff eingeben</label>
+            <label index="sources.searchform.quicksearch.searchstring">Suchbegriff</label>
+            <label index="sources.searchform.quicksearch.submit">Suchen</label>
+            <label index="sources.searchform.expertsearch">Expertensuche</label>
+
+            <label index="sources.expertsearchform.fulltext.legend">Suchanfrage</label>
+            <label index="sources.expertsearchform.searchstringoperator.label">Kombiniere mit</label>
+            <label index="sources.expertsearchform.searchstringoperator.10">UND</label>
+            <label index="sources.expertsearchform.searchstringoperator.20">ODER</label>
+            <label index="sources.expertsearchform.searchstringoperator.30">NICHT</label>
+            <label index="sources.expertsearchform.searchstringtype.label">Eingabetyp</label>
+            <label index="sources.expertsearchform.searchstringtype.1">Suchworte</label>
+            <label index="sources.expertsearchform.searchstringtype.2">Suchphrase</label>
+            <label index="sources.expertsearchform.searchstringtype.10">Personen</label>
+            <label index="sources.expertsearchform.searchstringtype.20">Orte</label>
+            <label index="sources.expertsearchform.searchstringtype.30">Entitäten</label>
+            <label index="sources.expertsearchform.searchstringtype.40">Ereignisse</label>
+            <label index="sources.expertsearchform.searchstringsearchwords.label">Eingabe</label>
+            <label index="sources.expertsearchform.searchstringsearchwords.placeholder">Begriffe eingeben</label>
+            <label index="sources.expertsearchform.role.label">Rolle</label>
+            <label index="sources.expertsearchform.fieldselection.label">Suche in</label>
+            <label index="sources.expertsearchform.datefilter.legend">Zeitraum</label>
+            <label index="sources.expertsearchform.startDate.label">Datum von</label>
+            <label index="sources.expertsearchform.startDate.placeholder">JJJJ-MM-TT</label>
+            <label index="sources.expertsearchform.endDate.label">Datum bis</label>
+            <label index="sources.expertsearchform.endDate.placeholder">JJJJ-MM-TT</label>
+            <label index="sources.expertsearchform.searchsubmit.legend">Absenden</label>
+            <label index="sources.expertsearchform.searchsubmit.label">Suchanfrage absenden</label>
+            <label index="sources.expertsearchform.searchsubmit.value">Suchen</label>
+            <label index="sources.expertsearchform.archives.legend">Archive und/oder Signaturen</label>
+            <label index="sources.expertsearchform.archives.label">In Archiven</label>
+            <label index="sources.expertsearchform.signatures.label">Mit Signaturen</label>
+            <label index="sources.expertsearchform.signatures.placeholder">Signaturen eingeben</label>
+            <label index="sources.expertsearchform.keywords.legend">Schlagworte</label>
+            <label index="sources.expertsearchform.keywords.label">Schlagworte auswählen</label>
+            <label index="sources.expertsearchform.persons.label">Personen</label>
+            <label index="sources.expertsearchform.localities.label">Orte</label>
+            <label index="sources.expertsearchform.entities.label">Sachen</label>
+            <label index="sources.expertsearchform.media.legend">Medien</label>
+            <label index="sources.expertsearchform.onlyWithImages.label">Finde nur Quellen mit Abbildungen</label>
+            <label index="sources.expertsearchform.pages.legend">Bestand</label>
+            <label index="sources.expertsearchform.pages.label">In Bestand</label>
+
+            <label index="sources.searchQuery.searchstrings">Sie suchten nach Quellen mit den Suchbegriffen</label>
+            <label index="sources.searchQuery.noSearchstrings">Sie suchten nach Quellen</label>
+            <label index="sources.searchQuery.keywords">mit den Schlagworten</label>
+            <label index="sources.searchQuery.inDateRange">in der Zeit</label>
+            <label index="sources.searchQuery.pages">in den Beständen</label>
+            <label index="sources.searchQuery.archives">in den Archiven</label>
+            <label index="sources.searchQuery.signatures">mit den Signaturen</label>
+            <label index="sources.searchQuery.onlyWithImages">nur mit Abbildungen</label>
+
+            <label index="sources.searchQuery.from">von</label>
+            <label index="sources.searchQuery.to">bis</label>
+            <label index="sources.searchQuery.as">als</label>
+            <label index="sources.searchQuery.in">in</label>
+
+            <label index="sources.recordRange.searchresult">Ihre Suche hat %1$s Treffer ergeben. Sie sehen die Treffer %2$s bis %3$s</label>
+            <label index="sources.recordRange.searchdetails">Ihre Suche hat %1$s Treffer ergeben. Sie sehen Treffer %2$s</label>
+            <label index="sources.recordRange.list">Sie sehen die Quellen %1$s bis %2$s von insgesamt %3$s</label>
+            <label index="sources.recordRange.show">%1$s Quellen in dieser Liste. Sie sehen die Quelle %2$s</label>
+
+            <label index="sources.sortingOptions.legend">Anzeigeoptionen</label>
+            <label index="sources.sortingOptions.itemsPerPage">Quellen pro Seite</label>
+            <label index="sources.sortingOptions.orderBy">Sortieren nach</label>
+            <label index="sources.sortingOptions.ascDesc">Aufsteigend/Absteigend</label>
+            <label index="sources.sortingOptions.asc">Aufsteigend</label>
+            <label index="sources.sortingOptions.desc">Absteigend</label>
+            <label index="sources.sortingOptions.submit">Anzeige anpassen</label>
+
+            <label index="sources.quicksearchresult.nothingfound">Nichts gefunden!</label>
+            <label index="sources.quicksearchresult.newsearch">Neue Suche</label>
+            <label index="sources.expertsearchresult.nothingfound">Nichts gefunden!</label>
+            <label index="sources.expertsearchresult.newsearch">Neue Suche</label>
+
+            <label index="sources.labels.general">Quelle</label>
+            <label index="sources.labels.text">Text</label>
+            <label index="sources.labels.contents">Inhalt</label>
+            <label index="sources.labels.meta">Metadaten</label>
+            <label index="sources.labels.editorial">Editorische Informationen</label>
+            <label index="sources.labels.media">Medien</label>
+            <label index="sources.labels.title">Titel</label>
+            <label index="sources.labels.identifier">Kennung</label>
+            <label index="sources.labels.persistentIdentifier">Systemunabhängige Kennung</label>
+            <label index="sources.labels.urn">URN</label>
+            <label index="sources.labels.sorting">Sortierschlüssel</label>
+            <label index="sources.labels.dateRange">Datierung</label>
+            <label index="sources.labels.archive">Archiv</label>
+            <label index="sources.labels.signature">Signatur</label>
+            <label index="sources.labels.signatureAddition">Signaturzusatz</label>
+            <label index="sources.labels.archivalHistory">Archivalische Überlieferung</label>
+            <label index="sources.labels.description">Quellenbeschreibung</label>
+            <label index="sources.labels.incipit">Incipit</label>
+            <label index="sources.labels.transcription">Quellentext</label>
+            <label index="sources.labels.translation">Übersetzung</label>
+            <label index="sources.labels.versoNote">Rückvermerk</label>
+            <label index="sources.labels.annotations">Anmerkungsapparat</label>
+            <label index="sources.labels.abstract">Kopfregest</label>
+            <label index="sources.labels.summary">Vollregest</label>
+            <label index="sources.labels.commentary">Quellenkommentar</label>
+            <label index="sources.labels.footnotes">Fußnotenapparat</label>
+            <label index="sources.labels.literature">Literaturhinweise</label>
+            <label index="sources.labels.relations">Beziehungen</label>
+            <label index="sources.labels.personsIndex">Personenindex</label>
+            <label index="sources.labels.localitiesIndex">Ortsindex</label>
+            <label index="sources.labels.entitiesIndex">Entitätenindex</label>
+            <label index="sources.labels.eventsIndex">Ereignisindex</label>
+            <label index="sources.labels.keywordsIndex">Schlagwortindex</label>
+            <label index="sources.labels.keywords">Schlagworte</label>
+            <label index="sources.labels.images">Abbildungen</label>
+            <label index="sources.labels.imageCaptions">Bildunterschriften</label>
+            <label index="sources.labels.editor">Letzte/r Bearbeiter/in</label>
+            <label index="sources.labels.editorComments">Bearbeitungshinweise</label>
+
+            <!-- PERSONS -->
+
+            <label index="persons">Personen</label>
+            <label index="persons.labels.name">Name</label>
+            <label index="persons.labels.nameVariants">Namensvarianten</label>
+            <label index="persons.labels.gender">Geschlecht</label>
+            <label index="persons.labels.gender.I.1">männlich</label>
+            <label index="persons.labels.gender.I.2">weiblich</label>
+            <label index="persons.labels.titles">Titel</label>
+            <label index="persons.labels.dateRange">Lebensdaten</label>
+            <label index="persons.labels.description">Biographische Informationen</label>
+            <label index="persons.labels.relations">Zugeordnete Quellen</label>
+            <label index="persons.labels.keywords">Schlagworte</label>
+
+            <!-- LOCALITIES -->
+
+            <label index="localities">Lokalitäten</label>
+            <label index="localities.labels.keywords">Schlagworte</label>
+            <label index="localities.labels.name">Bezeichnung</label>
+            <label index="localities.labels.nameVariants">Namensvarianten</label>
+            <label index="localities.labels.geodata">Geokoordinaten</label>
+            <label index="localities.labels.dateRange">Datierung</label>
+            <label index="localities.labels.description">Beschreibung</label>
+            <label index="localities.labels.relations">Zugeordnete Quellen</label>
+            <label index="localities.labels.map">Geographischer Bezug</label>
+
+            <!-- ENTITIES -->
+
+            <label index="entities">Entitäten</label>
+            <label index="entities.labels.keywords">Schlagwörter</label>
+            <label index="entities.labels.name">Bezeichnung</label>
+            <label index="entities.labels.nameVariants">Namensvarianten</label>
+            <label index="entities.labels.dateRange">Datierung</label>
+            <label index="entities.labels.description">Beschreibung</label>
+            <label index="entities.labels.relations">Zugeordnete Quellen</label>
+
+            <!-- EVENTS -->
+            <label index="events">Ereignisse</label>
+            <label index="events.labels.keywords">Schlagwörter</label>
+            <label index="events.labels.name">Bezeichnung</label>
+            <label index="events.labels.nameVariants">Namensvarianten</label>
+            <label index="events.labels.dateRange">Datierung</label>
+            <label index="events.labels.description">Beschreibung</label>
+            <label index="events.labels.relations">Zugeordnete Quellen</label>
+
+            <!-- ROLES -->
+
+            <label index="roles">Rollen</label>
+            <label index="roles.labels.issuers">Aussteller</label>
+            <label index="roles.labels.recipients">Empfänger</label>
+            <label index="roles.labels.issuedPlaces">Ausstellungsorte</label>
+
+            <!-- KEYWORDS -->
+
+            <label index="keywords">Schlagworte</label>
+
+            <!-- ARCHIVES -->
+
+            <label index="archives">Archive</label>
+
+            <!-- DATERANGES -->
+
+            <label index="dateRanges">Datierungen</label>
+            <label index="dateRanges.labels.startDate">Anfangsdatum</label>
+            <label index="dateRanges.labels.endDate">Enddatum</label>
+            <label index="dateRanges.labels.dateKey">Datierungsschlüssel</label>
+
+        </languageKey>
+    </data>
+</T3locallang>

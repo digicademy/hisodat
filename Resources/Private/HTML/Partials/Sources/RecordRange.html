@@ -1,0 +1,29 @@
+<f:if condition="{arguments.searchMode} > 0">
+	<f:then>
+		<f:if condition="{settings.pagination.total} > 0">
+			<f:if condition="{arguments.source}">
+				<f:then>
+					<f:translate key="sources.recordRange.searchdetails" arguments="{1 : settings.pagination.total, 2 : settings.pagination.currentRecord}" htmlEscape="FALSE" />.
+				</f:then>
+				<f:else>
+					<f:translate key="sources.recordRange.searchresult" arguments="{1 : settings.pagination.total, 2 : settings.pagination.lowerValue, 3 : settings.pagination.upperValue}" htmlEscape="FALSE" />.
+				</f:else>
+			</f:if>
+			<f:if condition="{settings.pagination.total} > 0">
+			</f:if>
+		</f:if>
+	</f:then>
+
+	<f:else>
+		<f:if condition="{settings.pagination.total} > 0">
+			<f:if condition="{arguments.source}">
+				<f:then>
+					<f:translate key="sources.recordRange.show" arguments="{1 : settings.pagination.total, 2 : settings.pagination.currentRecord}" htmlEscape="FALSE" />.
+				</f:then>
+				<f:else>
+					<f:translate key="sources.recordRange.list" arguments="{1 : settings.pagination.lowerValue, 2 : settings.pagination.upperValue, 3 : settings.pagination.total}" htmlEscape="FALSE" />.
+				</f:else>
+			</f:if>
+		</f:if>
+	</f:else>
+</f:if>

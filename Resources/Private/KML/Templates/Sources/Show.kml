@@ -1,0 +1,41 @@
+<f:layout name="Document" />
+
+<f:section name="Placemarks">
+
+    <f:for each="{source.relations}" as="relation">
+
+        <f:if condition="{relation.relationType} == 20">
+
+            <f:if condition="{relation.locality.geodata}">
+
+                <f:for each="{relation.locality.relations}" as="sourceRelations">
+
+                    <Placemark>
+                        <address>
+                            {relation.locality.name}
+                        </address>
+                        <f:if condition="{relation.locality.description}">
+                            <description>
+                                <f:cObject typoscriptObjectPath="lib.tx_hisodat.kml.cdata.open" />
+                                {relation.locality.description}
+                                <f:cObject typoscriptObjectPath="lib.tx_hisodat.kml.cdata.close" />
+                            </description>
+                        </f:if>
+                        <name>{sourceRelations.source.identifier}</name>
+                        <Point>
+                            <coordinates>{relation.locality.geodata}</coordinates>
+                        </Point>
+                        <TimeStamp>
+                            <when>{sourceRelations.source.dateRange.startDate}</when>
+                        </TimeStamp>
+                    </Placemark>
+
+                </f:for>
+
+            </f:if>
+
+        </f:if>
+
+    </f:for>
+
+</f:section>

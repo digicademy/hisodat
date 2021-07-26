@@ -1,0 +1,76 @@
+<f:if condition="{index.persons}">
+	<h4><f:translate key="sources.labels.personsIndex" /></h4>
+	<ul>
+	<f:for each="{index.persons}" as="person">
+		<li>
+			<f:link.action action="show" controller="Persons" pluginName="Registers" arguments="{person : person.uid}" pageUid="{settings.registerPids.persons}">
+				{person.name}
+			</f:link.action>
+			<f:if condition="{person.role}">
+			 ({person.role})
+			</f:if>
+		</li>
+	</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{index.localities}">
+	<h4><f:translate key="sources.labels.localitiesIndex" /></h4>
+	<ul>
+	<f:for each="{index.localities}" as="locality">
+		<li>
+			<f:link.action action="show" controller="Localities" pluginName="Registers" arguments="{locality : locality.uid}" pageUid="{settings.registerPids.localities}">
+				{locality.name}
+			</f:link.action>
+			<f:if condition="{locality.role}">
+				 ({locality.role})
+			</f:if>
+		</li>
+	</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{index.entities}">
+	<h4><f:translate key="sources.labels.entitiesIndex" /></h4>
+	<ul>
+	<f:for each="{index.entities}" as="entity">
+		<li>
+			<f:link.action action="show" controller="Entities" pluginName="Registers" arguments="{entity : entity.uid}" pageUid="{settings.registerPids.entities}">
+				{entity.name}
+			</f:link.action>
+			<f:if condition="{entity.role}">
+				 ({entity.role})
+			</f:if>
+		</li>
+	</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{index.events}">
+	<h4><f:translate key="sources.labels.eventsIndex" /></h4>
+	<ul>
+		<f:for each="{index.events}" as="event">
+			<li>
+				<f:link.action action="show" controller="Events" pluginName="Registers" arguments="{event : event.uid}" pageUid="{settings.registerPids.events}">
+					{event.name}
+				</f:link.action>
+				<f:if condition="{event.role}">
+					({event.role})
+				</f:if>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{index.keywords}">
+	<h4><f:translate key="sources.labels.keywordsIndex" /></h4>
+	<ul>
+		<f:for each="{index.keywords}" as="keyword">
+			<li>
+				<f:link.action action="show" controller="Keywords" pluginName="Registers" arguments="{keyword : keyword.uid}" pageUid="{settings.registerPids.keywords}">
+					{keyword.name}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:if>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_localities</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_localities</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="name.description">Name of the locality</label>
+            <label index="name_variants.description">Any name variants of the locality</label>
+            <label index="geodata.description">Geographical coordinates of the locality (decimal degrees)</label>
+            <label index="description.description">Details of the locality</label>
+            <label index="images.description">Any images of the locality</label>
+            <label index="keywords.description">Each locality can have some keywords attributed</label>
+            <label index="date_range.description">Each locality can carry date information</label>
+            <label index="relations.description">Each locality has relations to the sources in which it appears</label>            
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="name.description">Name der Lokalität</label>
+            <label index="name_variants.description">Namensvarianten der Lokalität</label>
+            <label index="geodata.description">Geographische Koordinaten für die Lokalität (Dezimalgrade)</label>
+            <label index="description.description">Genauere Informationen zur Lokalität</label>
+            <label index="images.description">Bilder von der Lokalität</label>
+            <label index="keywords.description">Jeder Lokalität können bestimmte Schlagworte zugeordnet werden</label>
+            <label index="date_range.description">Lokalitäten können datiert werden</label>
+            <label index="relations.description">Jede Lokalität steht in Beziehung zu den Quellen, in denen sie auftaucht</label>            
+        </languageKey>
+    </data>
+</T3locallang>

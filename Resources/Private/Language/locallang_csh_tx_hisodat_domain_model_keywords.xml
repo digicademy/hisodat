@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_keywords</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_keywords</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="name.description">Name of the keyword</label>
+            <label index="description.description">Description of the keyword</label>
+            <label index="keyword_type.description">To what objects does the keyword refer</label>
+            <label index="parent_keyword.description">Keywords can be subsumed under a parent keyword</label>            
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="name.description">Name des Schlagwortes</label>
+            <label index="description.description">Eine genauere Beschreibung des Schlagwortes</label>
+            <label index="keyword_type.description">Auf welche Datenobjekte bezieht sich das Schlagwort. Dies kann für eine Filterung benutzt werden</label>
+            <label index="parent_keyword.description">Schlagworte können unter einem übergeordneten Schlagwort zusammengefasst werden</label>            
+        </languageKey>        
+    </data>
+</T3locallang>

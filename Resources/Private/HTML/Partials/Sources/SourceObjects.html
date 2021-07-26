@@ -1,0 +1,57 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:for each="{sources}" as="source">
+
+	<div id="hisodat-{source.uid}">
+
+		<f:if condition="{source.title}">
+			<p><strong><f:translate key="sources.labels.title" />:</strong> {source.title}</p>
+		</f:if>
+
+		<h2>
+			<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : source, linktext : source.identifier}" />
+		</h2>
+
+		<f:if condition="{source.images}">
+			<div>
+				<f:cObject typoscriptObjectPath="lib.tx_hisodat.html.thumbnails" data="{images : source.images, listNum : '0'}" />
+			</div>
+		</f:if>
+
+		<f:if condition="{source.urn}">
+			<p><strong><f:translate key="sources.labels.urn" />:</strong> {source.urn}</p>
+		</f:if>
+
+		<f:if condition="{source.dateRange}">
+			<p><strong><f:translate key="sources.labels.dateRange" />:</strong> {source.timeInformation.dateComment}</p>
+		</f:if>
+
+		<f:if condition="{source.transmissionInformation}">
+			<f:then>
+				<f:render partial="Sources/SourceTransmissionInformation" arguments="{transmissionInformation : source.transmissionInformation}" />
+			</f:then>
+			<f:else>
+				<p><f:translate key="errors.noTransmissionInformation" /></p>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{source.abstract}">
+			<f:then>
+				<f:format.html><f:format.crop maxCharacters="200">{source.abstract}</f:format.crop></f:format.html>
+			</f:then>
+			<f:else>
+				<f:if condition="{source.summary}">
+					<f:format.html><f:format.crop maxCharacters="200">{source.summary}</f:format.crop></f:format.html>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<p>
+			<f:render partial="Sources/LinkToTarget" arguments="{arguments : arguments, settings : settings, source : source, linktext : '{f:translate(key: \'links.showDetails\')}'}" />
+		</p>
+
+		<hr />
+
+	</div>
+
+</f:for>

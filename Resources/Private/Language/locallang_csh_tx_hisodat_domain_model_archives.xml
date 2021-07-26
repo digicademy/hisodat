@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_archives</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_archives</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="name.description">Full name of the archive</label>
+            <label index="description.description">Details of the archive</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="name.description">Der volle Name des Archivs</label>
+            <label index="description.description">Detailinformationen zu diesem Archiv</label>
+        </languageKey>        
+    </data>
+</T3locallang>

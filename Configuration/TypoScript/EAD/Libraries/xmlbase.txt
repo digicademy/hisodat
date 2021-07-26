@@ -1,0 +1,4 @@
+# gets the root domain of the current template
+
+lib.tx_hisodat.ead.xmlbase = TEXT
+lib.tx_hisodat.ead.xmlbase.data = getIndpEnv:TYPO3_SITE_URL

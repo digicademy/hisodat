@@ -1,0 +1,67 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, person : person}" /></p>
+
+<h2>{person.name}</h2>
+
+<f:if condition="{person.nameVariants}">
+	<p><strong><f:translate key="persons.labels.nameVariants" /></strong>: {person.nameVariants}</p>
+</f:if>
+
+<f:if condition="{person.dateRange}">
+	<p><strong><f:translate key="persons.labels.dateRange" /></strong>: {person.dateRange.dateComment}</p>
+</f:if>
+
+<f:if condition="{person.gender}">
+	<p><strong><f:translate key="persons.labels.gender" /></strong>: <f:translate key="persons.labels.gender.I.{person.gender}" /></p>
+</f:if>
+
+<f:if condition="{person.titles}">
+	<p><strong><f:translate key="persons.labels.titles"/>: </strong>{person.titles}</p>
+</f:if>
+
+<f:if condition="{person.description}">
+	<f:format.html>{person.description}</f:format.html>
+</f:if>
+
+<f:if condition="{person.images}">
+	<f:cObject typoscriptObjectPath="lib.tx_hisodat.html.thumbnails" data="{images : person.images, listNum : 'all'}" />
+</f:if>
+
+<f:if condition="{person.keywords}">
+	<p><strong><f:translate key="persons.labels.keywords" /></strong>:</p>
+	<ul>
+		<f:for each="{person.keywords}" as="keyword">
+			<li>
+				<f:link.action action="show" controller="Keywords" pluginName="Registers" arguments="{keyword : keyword.uid}" pageUid="{settings.registerPids.keywords}">
+					{keyword.name}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{person.relations}">
+	<p><strong><f:translate key="persons.labels.relations" /></strong>:</p>
+	<ul>
+		<f:for each="{person.relations}" as="relation">
+			<li>
+				<f:alias map="{sourcePluginUid : '{f:cObject(typoscriptObjectPath : \'lib.tx_hisodat.html.sourcePidToPluginMapping\', data : \'{pid : relation.source.pid}\')}'}">
+					<f:if condition="{sourcePluginUid} > 0">
+						<f:then>
+							<f:link.action action="show" controller="Sources" pluginName="Sources" arguments="{source : relation.source.uid}" pageUid="{sourcePluginUid}">
+								{relation.source.identifier}
+							</f:link.action>
+						</f:then>
+						<f:else>
+							{relation.source.identifier}
+						</f:else>
+					</f:if>
+					<f:if condition="{relation.role}">({relation.role.name})</f:if>
+				</f:alias>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, person : person}" /></p>

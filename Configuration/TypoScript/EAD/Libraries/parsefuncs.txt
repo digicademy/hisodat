@@ -1,0 +1,9 @@
+lib.tx_hisodat.ead.parsefuncs {
+
+    hsc = TEXT
+    hsc {
+        current = 1
+        htmlSpecialChars = 1
+    }
+
+}

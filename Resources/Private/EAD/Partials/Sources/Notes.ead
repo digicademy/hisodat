@@ -1,0 +1,3 @@
+<!--Fußnoten siehe ead:title, prinzipiell aber von überall refernzierbar-->
+<!--optional mehrmals-->
+<ead:note encodinganalog="cei:note" label="Number" id="FN_Number"><ead:p>eine Fußnote, referenziert mit @label</ead:p></ead:note>

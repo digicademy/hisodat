@@ -1,0 +1,270 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{configuration.insertAbove}">
+    <f:render
+        section="Paginate"
+        arguments="{
+        arguments : arguments.arguments,
+        pagination : pagination,
+        configuration : configuration,
+        settings : arguments.settings
+        classes : arguments.classes}"
+    />
+</f:if>
+
+<f:renderChildren arguments="{objects}" />
+
+<f:if condition="{configuration.insertBelow}">
+    <f:render
+        section="Paginate"
+        arguments="{
+        arguments : arguments.arguments,
+        pagination : pagination,
+        configuration : configuration,
+        settings : arguments.settings
+        classes : arguments.classes}"
+    />
+</f:if>
+
+<!-- PAGINATION -->
+
+<f:section name="Paginate">
+
+<f:if condition="{pagination.numberOfPages} > 1">
+<ul class="{f:if(condition: '{classes.pagination}', then: '{classes.pagination}', else: 'pagination')}">
+    <f:if condition="{pagination.numberOfPages} > {configuration.maxPageNumberElements}">
+        <f:if condition="{pagination.previousPageRange} > 0">
+            <f:if condition="{arguments.searchMode}">
+                <f:then>
+                    <li class="{f:if(condition: '{classes.first}', then: '{classes.first}', else: 'first')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : 1,
+                                query : arguments.query,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc,
+                                searchMode : arguments.searchMode
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="searchresult"
+                            controller="Sources"
+                            pluginName="Search"><f:translate key="pagination.first" /></f:link.action>
+                    </li>
+                    <li class="{f:if(condition: '{classes.previous}', then: '{classes.previous}', else: 'previous')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.previousPageRange,
+                                query : arguments.query,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc,
+                                searchMode : arguments.searchMode
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="searchresult"
+                            controller="Sources"
+                            pluginName="Search"><f:translate key="pagination.previous" /></f:link.action>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="{f:if(condition: '{classes.first}', then: '{classes.first}', else: 'first')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : 1,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="list"
+                            controller="Sources"
+                            pluginName="Sources"><f:translate key="pagination.first" /></f:link.action>
+                    </li>
+                    <li class="{f:if(condition: '{classes.previous}', then: '{classes.previous}', else: 'previous')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.previousPageRange,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="list"
+                            controller="Sources"
+                            pluginName="Sources"><f:translate key="pagination.previous" /></f:link.action>
+                    </li>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:if>
+
+    <f:for each="{pagination.pages}" as="page">
+        <f:if condition="{page.isCurrent}">
+            <f:then>
+                <li class="{f:if(condition: '{classes.active}', then: '{classes.active}', else: 'active')}">
+                    {page.number}
+                </li>
+            </f:then>
+            <f:else>
+                <li class="{f:if(condition: '{classes.numbers}', then: '{classes.numbers}', else: 'numbers')}">
+                    <f:if condition="{page.number} > 1">
+                        <f:then>
+                            <f:if condition="{arguments.action}">
+                                <f:then>
+                                    <f:if condition="{arguments.searchMode}">
+                                        <f:then>
+                                            <f:link.action
+                                                class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                                                arguments="{
+                                                    currentPage : page.number,
+                                                    query : arguments.query,
+                                                    itemsPerPage : settings.itemsPerPage,
+                                                    orderBy : settings.orderBy,
+                                                    ascDesc : settings.ascDesc,
+                                                    searchMode : arguments.searchMode
+                                                }"
+                                                pageUid="{settings.originPid}"
+                                                action="searchresult"
+                                                controller="Sources"
+                                                pluginName="Search">{page.number}</f:link.action>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.action
+                                                class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                                                arguments="{
+                                                    currentPage : page.number,
+                                                    itemsPerPage : settings.itemsPerPage,
+                                                    orderBy : settings.orderBy,
+                                                    ascDesc : settings.ascDesc
+                                                }"
+                                                pageUid="{settings.originPid}"
+                                                action="list"
+                                                controller="Sources"
+                                                pluginName="Sources">{page.number}</f:link.action>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <f:widget.link class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}" arguments="{currentPage : page.number}">{page.number}</f:widget.link>
+                                </f:else>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{arguments.searchMode}">
+                                <f:then>
+                                    <f:link.action
+                                        class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                                        arguments="{
+                                            currentPage : 1,
+                                            query : arguments.query,
+                                            itemsPerPage : settings.itemsPerPage,
+                                            orderBy : settings.orderBy,
+                                            ascDesc : settings.ascDesc,
+                                            searchMode : arguments.searchMode
+                                        }"
+                                        pageUid="{settings.originPid}"
+                                        action="searchresult"
+                                        controller="Sources"
+                                        pluginName="Search">{page.number}</f:link.action>
+                                </f:then>
+                                <f:else>
+                                    <f:link.action
+                                        class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                                        arguments="{
+                                            currentPage : 1,
+                                            itemsPerPage : settings.itemsPerPage,
+                                            orderBy : settings.orderBy,
+                                            ascDesc : settings.ascDesc
+                                        }"
+                                        pageUid="{settings.originPid}"
+                                        action="list"
+                                        controller="Sources"
+                                        pluginName="Sources">{page.number}</f:link.action>
+                                </f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:else>
+        </f:if>
+    </f:for>
+
+    <f:if condition="{pagination.numberOfPages} > {configuration.maxPageNumberElements}">
+        <f:if condition="{pagination.nextPageRange} > 0">
+            <f:if condition="{arguments.searchMode}">
+                <f:then>
+                    <li class="{f:if(condition: '{classes.next}', then: '{classes.next}', else: 'next')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.nextPageRange,
+                                query : arguments.query,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc,
+                                searchMode : arguments.searchMode
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="searchresult"
+                            controller="Sources"
+                            pluginName="Search"><f:translate key="pagination.next" /></f:link.action>
+                    </li>
+                    <li class="{f:if(condition: '{classes.last}', then: '{classes.last}', else: 'last')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.numberOfPages,
+                                query : arguments.query,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc,
+                                searchMode : arguments.searchMode
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="searchresult"
+                            controller="Sources"
+                            pluginName="Search"><f:translate key="pagination.last" /></f:link.action>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="{f:if(condition: '{classes.next}', then: '{classes.next}', else: 'next')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.nextPageRange,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="list"
+                            controller="Sources"
+                            pluginName="Sources"><f:translate key="pagination.next" /></f:link.action>
+                    </li>
+                    <li class="{f:if(condition: '{classes.last}', then: '{classes.last}', else: 'last')}">
+                        <f:link.action
+                            class="{f:if(condition: '{classes.links}', then: '{classes.links}', else: 'paginationlink')}"
+                            arguments="{
+                                currentPage : pagination.numberOfPages,
+                                itemsPerPage : settings.itemsPerPage,
+                                orderBy : settings.orderBy,
+                                ascDesc : settings.ascDesc
+                            }"
+                            pageUid="{settings.originPid}"
+                            action="list"
+                            controller="Sources"
+                            pluginName="Sources"><f:translate key="pagination.last" /></f:link.action>
+                    </li>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:if>
+</ul>
+</f:if>
+
+</f:section>

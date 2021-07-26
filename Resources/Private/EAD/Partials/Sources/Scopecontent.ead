@@ -1,0 +1,33 @@
+<f:if condition="{transmissionInformation.issuers}">
+<ead:scopecontent encodinganalog="cei:issuer">
+    <ead:p>
+    <f:if condition="{transmissionInformation.issuers.persons}">
+        <f:for each="{transmissionInformation.issuers.persons}" as="person">
+            <ead:persname>{person}</ead:persname>
+        </f:for>
+    </f:if>
+    <f:if condition="{transmissionInformation.issuers.entities}">
+        <f:for each="{transmissionInformation.issuers.entities}" as="entity">
+            <ead:subject>{entity}</ead:subject>
+        </f:for>
+    </f:if>
+    </ead:p>
+</ead:scopecontent>
+</f:if>
+
+<f:if condition="{transmissionInformation.recipients}">
+<ead:scopecontent encodinganalog="cei:recipient">
+    <ead:p>
+    <f:if condition="{transmissionInformation.recipients.persons}">
+        <f:for each="{transmissionInformation.recipients.persons}" as="person">
+            <ead:persname>{person}</ead:persname>
+        </f:for>
+    </f:if>
+    <f:if condition="{transmissionInformation.recipients.entities}">
+        <f:for each="{transmissionInformation.recipients.entities}" as="entity">
+            <ead:subject>{entity}</ead:subject>
+        </f:for>
+    </f:if>
+    </ead:p>
+</ead:scopecontent>
+</f:if>

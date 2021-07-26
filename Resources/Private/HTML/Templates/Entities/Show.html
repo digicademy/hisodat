@@ -1,0 +1,61 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, entity : entity}" /></p>
+
+<h2>
+	{entity.name}
+</h2>
+
+<f:if condition="{entity.nameVariants}">
+	<p><strong><f:translate key="entities.labels.nameVariants" />:</strong> {entity.nameVariants}</p>
+</f:if>
+
+<f:if condition="{entity.dateRange}">
+	<p><strong><f:translate key="entities.labels.dateRange" />:</strong> {entity.dateRange.dateComment}</p>
+</f:if>
+
+<f:if condition="{entity.description}">
+	<f:format.html>{entity.description}</f:format.html>
+</f:if>
+
+<f:if condition="{entity.images}">
+	<f:cObject typoscriptObjectPath="lib.tx_hisodat.html.thumbnails" data="{images : entity.images, listNum : 'all'}" />
+</f:if>
+
+<f:if condition="{entity.keywords}">
+	<p><strong><f:translate key="entities.labels.keywords" />:</strong></p>
+	<ul>
+		<f:for each="{entity.keywords}" as="keyword">
+			<li>
+				<f:link.action action="show" controller="Keywords" pluginName="Registers" arguments="{keyword : keyword.uid}" pageUid="{settings.registerPids.keywords}">
+					{keyword.name}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{entity.relations}">
+	<p><strong><f:translate key="entities.labels.relations" />:</strong></p>
+	<ul>
+		<f:for each="{entity.relations}" as="relation">
+			<li>
+				<f:alias map="{sourcePluginUid : '{f:cObject(typoscriptObjectPath : \'lib.tx_hisodat.html.sourcePidToPluginMapping\', data : \'{pid : relation.source.pid}\')}'}">
+					<f:if condition="{sourcePluginUid} > 0">
+						<f:then>
+							<f:link.action action="show" controller="Sources" pluginName="Sources" arguments="{source : relation.source.uid}" pageUid="{sourcePluginUid}">
+								{relation.source.identifier}
+							</f:link.action>
+						</f:then>
+						<f:else>
+							{relation.source.identifier}
+						</f:else>
+					</f:if>
+					<f:if condition="{relation.role}">({relation.role.name})</f:if>
+				</f:alias>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, entity : entity}" /></p>

@@ -1,0 +1,17 @@
+<p>
+	<strong><f:translate key="sources.labels.archive" />:</strong>
+	<f:link.action action="show" controller="Archives" pluginName="Registers" arguments="{archive : source.archive.uid}" pageUid="{settings.registerPids.archives}">
+		{source.archive.name}
+		<f:if condition="{source.signature}">
+			, {source.signature}
+		</f:if>
+		<f:if condition="{source.signatureAddition}">
+			 ({source.signatureAddition})
+		</f:if>
+	</f:link.action>
+</p>
+
+<f:if condition="{source.archivalHistory}">
+	<p><strong><f:translate key="sources.labels.archivalHistory" />:</strong>
+	<f:format.html>{source.archivalHistory}</f:format.html>
+</f:if>

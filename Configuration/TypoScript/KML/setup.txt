@@ -1,0 +1,9 @@
+# index.php?id=###ID###&type=2008&pluginUid=###ID###&tx_hisodat_registers[action]=list&tx_hisodat_registers[controller]=Localities&tx_hisodat_registers[filters][alphabet][showAll]=1&tx_hisodat_registers[format]=kml
+# index.php?id=###ID###&type=2008&pluginUid=###ID###&tx_hisodat_registers[locality]=###ID###&tx_hisodat_registers[action]=show&tx_hisodat_registers[controller]=Localities&tx_hisodat_registers[format]=kml
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/KML/Page/page.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/KML/Plugins/setup.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/KML/Libraries/cdata.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/KML/Libraries/swapcoordinates.txt">

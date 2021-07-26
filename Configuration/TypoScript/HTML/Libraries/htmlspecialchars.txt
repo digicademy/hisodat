@@ -1,0 +1,5 @@
+lib.tx_hisodat.html.htmlspecialchars = TEXT
+lib.tx_hisodat.html.htmlspecialchars {
+    data = current : 1
+    htmlSpecialChars = 1
+}

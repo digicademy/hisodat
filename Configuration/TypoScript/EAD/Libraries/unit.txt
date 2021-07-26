@@ -1,0 +1,51 @@
+# Fetches title/subtitle of storage pages of current plugin or source as unitids/unittitles
+
+lib.tx_hisodat.ead.unit = RECORDS
+lib.tx_hisodat.ead.unit {
+
+    stdWrap {
+        required = 1
+        outerWrap = <ead:did> | </ead:did>
+    }
+
+    source.cObject = COA
+    source.cObject {
+        10 = TEXT
+        10 {
+            field = pids
+            required = 1
+        }
+        20 = TEXT
+        20 {
+            field = uid
+            required = 1
+            outerWrap = ,|
+            outerWrap.if.isTrue.field = pids
+        }
+        
+    }
+    
+    tables = pages
+    
+    dontCheckPid = 1
+    
+    conf.pages = COA
+    conf.pages {
+    
+        10 = TEXT
+        10 {
+            field = title
+            wrap = <ead:unitid> | </ead:unitid>
+            required = 1
+            htmlSpecialChars = 1
+        }
+        
+        20 = TEXT
+        20 {
+            field = subtitle
+            wrap = <ead:unittitle> | </ead:unittitle>
+            required = 1
+            htmlSpecialChars = 1
+        }
+    }
+}

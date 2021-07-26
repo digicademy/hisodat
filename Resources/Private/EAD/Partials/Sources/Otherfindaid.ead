@@ -1,0 +1,4 @@
+<ead:otherfindaid>
+    <!--optional mehrmals-->
+    <ead:extref xlink:href="irgendwohinAusgehendvonderBasis.html">Link in andere Systeme</ead:extref>
+</ead:otherfindaid>

@@ -1,0 +1,58 @@
+<f:layout name="Document" />
+
+<f:section name="Fonds">
+    <!-- ######################## Bestand ##################################### -->
+
+    <f:render partial="Sources/Unit" arguments="{pids : settings.recordPids.sources}" />
+    
+    <f:render partial="Sources/Bioghist" />
+    
+    <f:render partial="Sources/Custodhist" />
+    
+    <f:render partial="Sources/Bibref" />
+    
+    <!--Können bei Bedarf eingeführt werden -->
+    <!--
+        <ead:accruals>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Zugänge</ead:p>
+        </ead:accruals>
+        <ead:appraisal>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Bewertung</ead:p>
+        </ead:appraisal>
+        <ead:altformavail>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Alternative Formen erhältlich, z.B. Mikrofilm</ead:p>
+        </ead:altformavail>
+        <ead:arrangement>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Aussagen über die Gliederung bzw. Anordnung des Materials</ead:p>
+        </ead:arrangement>
+        <ead:scopecontent>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Bestandseinleitung: Bestandsgeschichte und Inhalt</ead:p>
+        </ead:scopecontent>
+        <ead:processinfo>
+        <ead:head>Überschrift</ead:head>
+            <ead:p>Aussagen über Bearbeitung des Bestands (sofern diese separat erfaßt sind,
+            sonst unter scopecontent</ead:p>
+        </ead:processinfo>
+        <ead:relatedmaterial>
+            <ead:head>Überschrift</ead:head>
+            <ead:p>Verweis auf verwandte Bestände und/oder Literatur (SOLLTE)</ead:p>
+        </ead:relatedmaterial>
+    -->
+
+</f:section>
+
+<f:section name="Items">
+    <!-- ######################## Einträge ##################################### -->
+
+    <f:for each="{sources}" as="source">
+        <ead:c level="item">
+            <f:render partial="Sources/Item" arguments="{source : source, settings : settings}" />
+        </ead:c>
+    </f:for>
+
+</f:section>

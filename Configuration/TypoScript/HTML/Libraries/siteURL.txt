@@ -1,0 +1,4 @@
+lib.tx_hisodat.html.siteURL = TEXT
+lib.tx_hisodat.html.siteURL {
+    data = getIndpEnv:TYPO3_SITE_URL
+}

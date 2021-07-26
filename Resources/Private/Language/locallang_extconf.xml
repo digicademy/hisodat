@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Language file for the extension configuration</description>
+        <type></type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="SOURCES_PIDLIST">Pages containing sources: Comma separated list of pages (IDs) on which you keep your sources records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="ARCHIVES_PIDLIST">Pages containing archives: Comma separated list of pages (IDs) on which you keep your archive records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="KEYWORDS_PIDLIST">Pages containing keywords: Comma separated list of pages (IDs) on which you keep your keyword records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="PERSONS_PIDLIST">Pages containing persons: Comma separated list of pages (IDs) on which you keep your person records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="LOCALITIES_PIDLIST">Pages containing localities: Comma separated list of pages (IDs) on which you keep your locality records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="ENTITIES_PIDLIST">Pages containing entities: Comma separated list of pages (IDs) on which you keep your entity records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="EVENTS_PIDLIST">Pages containing events: Comma separated list of pages (IDs) on which you keep your event records. This is a global value that can be overriden locally with PageTSConfig.</label>
+            <label index="MM_PID">Page where all mm relations are collected.</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="SOURCES_PIDLIST">Seiten mit Quellendatensätzen: Kommaseparierte Liste von Seiten-IDs für Quellen-Datensätze. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="ARCHIVES_PIDLIST">Seiten mit Archivdatensätzen: Kommaseparierte Liste von Seiten-IDs für Archivdatensätze. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="KEYWORDS_PIDLIST">Seiten mit Schlagwörtern: Kommaseparierte Liste von Seiten-IDs für Schlagwörter. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>            <label index="PERSONS_PIDLIST">Seiten mit Personendatensätzen: Kommaseparierte Liste von Seiten-IDs für Personendatensätze. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="LOCALITIES_PIDLIST">Seiten mit Lokalitäten-Datensätzen: Kommaseparierte Liste von Seiten-IDs für Lokalitäten-Datensätze. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="ENTITIES_PIDLIST">Seiten mit Entitäten-Datensätzen: Kommaseparierte Liste von Seiten-IDs für Entitäten. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="EVENTS_PIDLIST">Seiten mit Ereignis-Datensätzen: Kommaseparierte Liste von Seiten-IDs für Ereignisse. Dies ist ein globaler Wert der mittels PageTSConfig überschrieben werden kann.</label>
+            <label index="MM_PID">Seite für Administratoren auf der die MM Relationen gesammelt werden.</label>
+        </languageKey>
+    </data>
+    <orig_text type="array">
+        <languageKey index="default" type="array">
+        </languageKey>
+        <languageKey index="de" type="array">
+        </languageKey>
+    </orig_text>
+</T3locallang>

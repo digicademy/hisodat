@@ -1,0 +1,19 @@
+lib.tx_hisodat.kml.swapcoordinates = COA
+lib.tx_hisodat.kml.swapcoordinates {
+
+    10 = TEXT
+    10 {
+        field = geodata
+        listNum = last
+        wrap = |,
+    }
+
+    20 = TEXT
+    20 {
+        field = geodata
+        listNum = 0
+    }
+
+    30 = TEXT
+    30.value = ,0
+}

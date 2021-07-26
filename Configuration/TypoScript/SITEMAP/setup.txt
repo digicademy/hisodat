@@ -1,0 +1,3 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/SITEMAP/Page/page.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/SITEMAP/Plugins/setup.txt">

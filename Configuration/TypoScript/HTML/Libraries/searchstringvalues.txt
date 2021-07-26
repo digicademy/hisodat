@@ -1,0 +1,15 @@
+lib.tx_hisodat.html.searchstringvalues = COA
+lib.tx_hisodat.html.searchstringvalues {
+
+    10 = LOAD_REGISTER
+    10.searchstrings.data = field:searchstrings
+
+    20 = TEXT
+    20 {
+        cObject = TEXT
+        cObject.value = TSFE:register|searchstrings|{field:key}|{field:argument}
+        cObject.insertData = 1
+        wrap = {|}
+        insertData = 1
+    }
+}

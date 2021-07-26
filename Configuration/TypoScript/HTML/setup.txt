@@ -1,0 +1,8 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Plugins/setup.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/thumbnails.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/htmlspecialchars.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/searchstringvalues.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/convertcase.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/currentDate.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/HTML/Libraries/siteURL.txt">

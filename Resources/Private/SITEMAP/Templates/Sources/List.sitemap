@@ -1,0 +1,11 @@
+<f:layout name="Document" />
+
+<f:section name="Body">
+    <f:for each="{sources}" as="source">
+        <url>
+            <loc><f:uri.action action="show" arguments="{source : source, itemsPerPage : settings.itemsPerPage, orderBy : settings.orderBy, ascDesc : settings.ascDesc}" pageUid="{settings.targetPid}" /></loc>
+            <changefreq>yearly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    </f:for>
+</f:section>

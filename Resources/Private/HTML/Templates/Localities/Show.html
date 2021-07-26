@@ -1,0 +1,71 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, locality : locality}" /></p>
+
+<h2>
+	{locality.name}
+</h2>
+
+<f:if condition="{locality.nameVariants}">
+	<p><strong><f:translate key="localities.labels.nameVariants" />:</strong> {locality.nameVariants}</p>
+</f:if>
+
+<f:if condition="{locality.dateRange}">
+	<p><strong><f:translate key="localities.labels.dateRange" /></strong>: {locality.dateRange.dateComment}</p>
+</f:if>
+
+<f:if condition="{locality.geodata}">
+	<p><strong><f:translate key="localities.labels.map" />:</strong></p>
+	<h:leaflet objects="{0 : {0 : locality}}" coordinatesProperty="geodata" titleProperty="name" zoom="12" setView="{locality.geodata}" mapHeight="180" />
+	<p>
+		<f:link.action arguments="{locality : locality.uid}" additionalParams="{type : 2008, pluginUid : settings.pluginUid}" format="kml">
+			<f:translate key="general.labels.kml" />
+		</f:link.action>
+	</p>
+</f:if>
+
+<f:if condition="{locality.description}">
+	<f:format.html>{locality.description}</f:format.html>
+</f:if>
+
+<f:if condition="{locality.images}">
+	<f:cObject typoscriptObjectPath="lib.tx_hisodat.html.thumbnails" data="{images : locality.images, listNum : 'all'}" />
+</f:if>
+
+<f:if condition="{locality.keywords}">
+	<p><strong><f:translate key="localities.labels.keywords" />:</strong></p>
+	<ul>
+		<f:for each="{locality.keywords}" as="keyword">
+			<li>
+				<f:link.action action="show" controller="Keywords" pluginName="Registers" arguments="{keyword : keyword.uid}" pageUid="{settings.registerPids.keywords}">
+					{keyword.name}
+				</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<f:if condition="{locality.relations}">
+	<p><strong><f:translate key="localities.labels.relations" />:</strong></p>
+	<ul>
+		<f:for each="{locality.relations}" as="relation">
+			<li>
+				<f:alias map="{sourcePluginUid : '{f:cObject(typoscriptObjectPath : \'lib.tx_hisodat.html.sourcePidToPluginMapping\', data : \'{pid : relation.source.pid}\')}'}">
+					<f:if condition="{sourcePluginUid} > 0">
+						<f:then>
+							<f:link.action action="show" controller="Sources" pluginName="Sources" arguments="{source : relation.source.uid}" pageUid="{sourcePluginUid}">
+								{relation.source.identifier}
+							</f:link.action>
+						</f:then>
+						<f:else>
+							{relation.source.identifier}
+						</f:else>
+					</f:if>
+					<f:if condition="{relation.role}">({relation.role.name})</f:if>
+				</f:alias>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+
+<p><f:render partial="Registers/LinkToOrigin" arguments="{settings : settings, arguments : arguments, locality : locality}" /></p>

@@ -1,0 +1,23 @@
+#######################################################################
+# REGISTER PLUGIN settings
+#######################################################################
+
+plugin.tx_hisodat_registers.settings {
+
+    filters {
+        alphabet {
+            defaultLetterRange = A
+            maxLetterRangeLength = 2
+            filterProperty = name
+            orderByProperties = name
+        }
+        search {
+            filterProperty = name
+        }
+        keywords {
+            parentKeywords =
+            classifications =
+        }
+    }
+
+}

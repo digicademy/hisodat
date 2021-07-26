@@ -1,0 +1,20 @@
+<f:alias map="{params : {
+			searchMode : arguments.searchMode,
+			query : arguments.query,
+			itemsPerPage : settings.itemsPerPage,
+			orderBy : settings.orderBy,
+			ascDesc : settings.ascDesc
+		}}">
+	<ul>
+		<li>
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'searchform')}" action="searchform" arguments="{searchMode : arguments.searchMode}" pageUid="{settings.originPid}">
+				<f:translate key="links.newSearch" />
+			</f:link.action>
+		</li>
+		<li>
+			<f:link.action class="{f:if(condition: '{class}', then: '{class}', else: 'searchform')}" action="searchform" arguments="{params}" pageUid="{settings.originPid}">
+				<f:translate key="links.modifySearch" />
+			</f:link.action>
+		</li>
+	</ul>
+</f:alias>

@@ -1,0 +1,16 @@
+lib.tx_hisodat.html.convertcase = CASE
+lib.tx_hisodat.html.convertcase {
+
+    key.field = case
+
+    upper = TEXT
+    upper {
+        field = string
+        case = upper
+    }
+
+    lower < .upper
+    lower.case = lower
+
+    default < .lower
+}

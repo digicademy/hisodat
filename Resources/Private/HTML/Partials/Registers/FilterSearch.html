@@ -1,0 +1,35 @@
+<f:if condition="{errors}">
+	<p class="formerrors"><f:translate key="errors.formerrors" />.</p>
+</f:if>
+
+<f:form action="search" name="search" enctype="multipart/form-data" method="post" noCacheHash="TRUE" pageUid="{settings.targetPid}">
+	<fieldset>
+
+		<legend></legend>
+
+		<f:if condition="{errors.searchstring}">
+			<ul>
+				<f:for each="{errors.searchstring.errors}" as="error">
+					<li class="formerrors"><f:translate key="errors.searchstring.{error.code}" /></li>
+				</f:for>
+			</ul>
+		</f:if>
+
+		<label for="searchstring"><f:translate key="sources.searchform.quicksearch.searchstring" /></label>
+		<f:form.textfield
+				id="searchstring"
+				name="searchstring"
+				placeholder="{f:translate(key: 'sources.searchform.quicksearch.placeholder')}"
+				value="{arguments.searchstring}"
+				class="{f:if(condition: '{errors.searchstring}', then: 'formerrors', else: 'text')}"
+				/>
+
+		<label for="submit"><f:translate key="sources.searchform.quicksearch.submit" /></label>
+		<f:form.submit
+				name="submit"
+				id="submit"
+				value="{f:translate(key: 'sources.searchform.quicksearch.submit')}"
+				/>
+
+	</fieldset>
+</f:form>

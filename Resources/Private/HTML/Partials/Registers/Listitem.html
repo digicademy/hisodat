@@ -1,0 +1,55 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{settings.mode} == 10">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{person : entry}" />
+		<f:link.action action="show" controller="Persons" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>
+
+<f:if condition="{settings.mode} == 20">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{locality : entry}" />
+		<f:link.action action="show" controller="Localities" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>
+
+<f:if condition="{settings.mode} == 30">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{entity : entry}" />
+		<f:link.action action="show" controller="Entities" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>
+
+<f:if condition="{settings.mode} == 40">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{event : entry}" />
+		<f:link.action action="show" controller="Events" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>
+
+<f:if condition="{settings.mode} == 50">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{archive : entry}" />
+		<f:link.action action="show" controller="Archives" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>
+
+<f:if condition="{settings.mode} == 60">
+	<li id="entry-{entry.uid}">
+		<h:merge array1="{arguments : arguments}" array2="{keyword : entry}" />
+		<f:link.action action="show" controller="Keywords" arguments="{arguments}" pageUid="{settings.targetPid}">
+			{entry.name}
+		</f:link.action>
+	</li>
+</f:if>

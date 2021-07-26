@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_dateranges</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_dateranges</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="date_comment.description">The date range in textual form for the website</label>
+            <label index="start_date.description">The start date in the format YYYY-MM-TT</label>            
+            <label index="end_date.description">The end date in the format YYYY-MM-TT</label>
+            <label index="date_key.description">A specific date sorting key</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="date_comment.description">Die Datierungsinformationen in Textform für die Online-Anzeige</label>        
+            <label index="start_date.description">Das Anfangsdatum im Format YYYY-MM-TT</label>
+            <label index="end_date.description">Das Enddatum im Format YYYY-MM-TT</label>
+            <label index="date_key.description">Über einen Datierungsschlüssel können spezielle Sortierungen vorgenommen werden.</label>
+        </languageKey>        
+    </data>
+</T3locallang>

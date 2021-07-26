@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead:ead xmlns:ead="urn:isbn:1-931666-22-9"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cei="http://www.monasterium.net/NS/cei"
+    xsi:schemaLocation="urn:isbn:1-931666-22-9 http://sandbox.itineranova.be/rest/db/www/core/res/xsd/vdu-ead.xsd">
+
+    <ead:eadheader>
+        <ead:eadid></ead:eadid>
+        <ead:filedesc>
+            <ead:titlestmt>
+                <ead:titleproper></ead:titleproper>
+            </ead:titlestmt>
+        </ead:filedesc>
+    </ead:eadheader>
+
+    <ead:archdesc level="otherlevel">
+        <ead:did>
+            <ead:abstract></ead:abstract>
+        </ead:did>
+        <ead:dsc>
+            <ead:c level="fonds" xml:base="{f:cObject(typoscriptObjectPath: 'lib.tx_hisodat.ead.xmlbase')}">
+                <!--xml:base zählt als Basis für alle darauffolgende xlinks, solange keine neue Basis genannt wird-->
+
+                <f:render section="Fonds" />
+
+                <f:render section="Items" />
+
+            </ead:c>
+        </ead:dsc>
+    </ead:archdesc>
+</ead:ead>

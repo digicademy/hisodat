@@ -1,0 +1,19 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+	<p><f:render partial="Sources/RecordRange" arguments="{arguments : arguments, settings : settings}" /></p>
+
+	<f:render partial="Sources/SortingOptions" arguments="{arguments : arguments, settings : settings}" />
+
+	<f:render partial="General/LinkToFormat" arguments="{arguments : arguments, settings : settings}" />
+
+	<h:widget.paginate objects="{sources}" as="sourceObjects" arguments="{arguments : arguments, total : settings.pagination.total, settings : settings}" configuration="{itemsPerPage : settings.itemsPerPage, maxPageNumberElements : 10, insertAbove : 1, insertBelow : 1}">
+
+		<f:render partial="Sources/SourceObjects" arguments="{arguments : arguments, settings : settings, sources : sourceObjects}" />
+
+	</h:widget.paginate>
+
+</f:section>

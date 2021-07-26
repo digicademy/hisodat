@@ -1,0 +1,3 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/RDF/Page/page.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hisodat/Configuration/TypoScript/RDF/Plugins/setup.txt">

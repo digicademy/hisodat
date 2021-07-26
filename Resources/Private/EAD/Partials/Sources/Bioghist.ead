@@ -1,0 +1,8 @@
+<!--Entstehungsgeschichte-->
+<!--optional 1x-->
+<ead:bioghist>
+    <ead:head>Überschrift Entstehungsgeschichte z.B Klostergeschichte</ead:head>
+    <ead:p>
+        Meine Entstehungsgeschichte                
+    </ead:p> 
+</ead:bioghist>

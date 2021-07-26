@@ -1,0 +1,80 @@
+<ead:did>
+
+    <!-- obligatorisch erste ead:unitid wird für die Systeminterne ID verwendet -->
+    <!-- Das System erzeugt sich eine ID aus dieser unitid indem es nicht erlaubte Zeichen ersetzt -->    
+    <ead:unitid>{source.persistentIdentifier}</ead:unitid>
+
+    <!-- TYPO3 ID -->
+    <ead:unitid>tx_hisodat_domain_model_sources:{source.uid}</ead:unitid>
+
+    <!-- URN -->
+    <f:if condition="{source.urn}">    
+        <ead:unitid>{source.urn}</ead:unitid>
+    </f:if>
+
+    <!--Sollte da VDU die Urkunden nach Jahreszahlen sortiert und in Blöcke für die Ansicht aufteilt-->
+    <f:if condition="{source.timeInformation}">
+        <ead:unitdate normal="{source.timeInformation.startDate}/{source.timeInformation.endDate}">
+            Originale Form des Datums: <ead:emph altrender="cei:foreign">{source.timeInformation.dateComment}</ead:emph>
+        </ead:unitdate>
+    </f:if>
+    
+    <!-- Kurzregest, formatiert -->
+    <f:if condition="{source.abstract}">    
+        <ead:unittitle encodinganalog="cei:abstract">
+            <f:cObject typoscriptObjectPath="lib.tx_hisodat.ead.parsefuncs.hsc">{source.abstract}</f:cObject>
+        </ead:unittitle>
+    </f:if>
+
+    <!-- Vollregest, formatiert -->
+    <f:if condition="{source.summary}">    
+        <ead:unittitle encodinganalog="cei:abstract">
+            <f:cObject typoscriptObjectPath="lib.tx_hisodat.ead.parsefuncs.hsc">{source.summary}</f:cObject>
+        </ead:unittitle>
+    </f:if>
+        
+    <f:if condition="{source.transmissionInformation.issuedPlaces}">
+        <!-- Ausstellungsort -->
+        <f:for each="{source.transmissionInformation.issuedPlaces}" as="place">
+            <ead:materialspec encodinganalog="cei:issuedPlace">{place}</ead:materialspec>
+        </f:for>
+    </f:if>
+    
+    <!--optional mehrmals-->
+    <ead:materialspec encodinganalog="cei:nota">
+        Archivvermerke mit <ead:emph altrender="cei:foreign">Originalzitaten (Kursiv)</ead:emph>.
+    </ead:materialspec>                
+    
+    <!--optional mehrmals-->
+    <ead:langmaterial>meineSprache</ead:langmaterial>
+    
+    <!--optional 1x-->
+    <ead:physdesc>
+
+        <!--optional 1x-->
+        <ead:dimensions>Maße</ead:dimensions>
+        
+        <!--optional 1x-->
+        <ead:physfacet encodinganalog="cei:material">mein Beschreibstoff</ead:physfacet>
+        
+        <!--optional 1x-->
+        <ead:physfacet encodinganalog="cei:condition">mein Zustand</ead:physfacet>
+    </ead:physdesc>
+    
+    <f:if condition="{source.images}">
+        <!-- Scans -->
+        <f:cObject typoscriptObjectPath="lib.tx_hisodat.ead.daogrp" data="{images : source.images, captions : source.imageCaptions}" />
+    </f:if>
+    
+    <ead:materialspec encodinganalog="cei:traditioform">orig</ead:materialspec>  
+    
+    <!--Eingebettetes CEI für Transkriptionen und weitere Urkundenspezifische Daten-->
+    <ead:idao>
+        <cei:text>
+            <cei:body>
+                <cei:idno></cei:idno>
+            </cei:body>                                
+        </cei:text>                            
+    </ead:idao>    
+    
+</ead:did>

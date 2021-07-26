@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_hisodat_domain_model_entities</description>
+        <type>CSH</type>
+        <csh_table>tx_hisodat_domain_model_entities</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="name.description">Name of the entity</label>
+            <label index="name_variants.description">Variants of the entities' name</label>
+            <label index="description.description">Detailed information about the entity of the entity</label>
+            <label index="images.description">Images of the entity</label>
+            <label index="keywords.description">Keywords relating to the entity</label>
+            <label index="date_range.description">Date information about the entity</label>    
+            <label index="relations.description">Entities are related to the sources in which they appear</label>                            
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="name.description">Name der Entität</label>
+            <label index="name_variants.description">Namensvarianten für diese Entität</label>
+            <label index="description.description">Eine genauere Beschreibung dieser Entität und ihrer Funktionen</label>
+            <label index="images.description">Bilder der Entität</label>
+            <label index="keywords.description">Schlagworte für diese Entität</label>
+            <label index="date_range.description">Datierung dieser Entität</label>    
+            <label index="relations.description">Jede Entität steht in Beziehung zu den Quellen, in denen sie auftaucht</label>                            
+        </languageKey>        
+    </data>
+</T3locallang>

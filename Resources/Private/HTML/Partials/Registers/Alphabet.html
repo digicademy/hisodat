@@ -1,0 +1,57 @@
+{namespace h = ADWLM\Hisodat\ViewHelpers}
+
+<f:if condition="{entries}">
+
+	<f:then>
+		<f:for each="{entries}" as="entry" iteration="iterator">
+
+			<h:alphabet string="{entry.name}" />
+
+			<f:if condition="{iterator.isFirst}">
+				<div id="{initialLetter}">
+				<h2>{initialLetter}{arguments.secondLevelLetter}</h2>
+				<ul>
+				<f:render partial="Registers/Listitem" arguments="{settings : settings, entry : entry, arguments : arguments, iterator : iterator}" />
+			</f:if>
+
+			<f:if condition="{iterator.isLast}">
+				<f:then>
+					<f:if condition="{newBlock}">
+						</ul>
+						</div>
+						<div id="{initialLetter}">
+						<h2>{initialLetter}{arguments.secondLevelLetter}</h2>
+						<ul>
+					</f:if>
+					<f:if condition="{iterator.total} > 1">
+						<f:render partial="Registers/Listitem" arguments="{settings : settings, entry : entry, arguments : arguments, iterator : iterator}" />
+					</f:if>
+					</ul>
+					</div>
+				</f:then>
+				<f:else>
+					<f:if condition="{iterator.index} > 0">
+						<f:if condition="{newBlock}">
+							</ul>
+							</div>
+							<div id="{initialLetter}">
+							<h2>{initialLetter}{arguments.secondLevelLetter}</h2>
+							<ul>
+						</f:if>
+						<f:render partial="Registers/Listitem" arguments="{settings : settings, entry : entry, arguments : arguments, iterator : iterator}" />
+					</f:if>
+				</f:else>
+			</f:if>
+
+			<h:merge array1="{arguments : arguments}" array2="{formerParentName : entry.parentName}" removeEmptyElements="TRUE" keepZeros="FALSE" />
+
+		</f:for>
+	</f:then>
+
+	<f:else>
+		<p>
+			<f:translate key="errors.noData" />
+		</p>
+	</f:else>
+
+</f:if>

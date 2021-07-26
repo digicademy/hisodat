@@ -1,0 +1,10 @@
+<f:layout name="Document" />
+
+<f:section name="Body">
+    <f:for each="{sources}" as="source">
+        <rdf:Description rdf:about="BASE">
+            <dc:publisher>HISODAT</dc:publisher>
+            <dc:title>{source.identifier}</dc:title>
+        </rdf:Description>
+    </f:for>
+</f:section>

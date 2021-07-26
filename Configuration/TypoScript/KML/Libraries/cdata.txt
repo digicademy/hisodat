@@ -1,0 +1,6 @@
+lib.tx_hisodat.kml.cdata {
+    open = TEXT
+    open.value = <![CDATA[
+    close = TEXT
+    close.value = ]]>
+}
