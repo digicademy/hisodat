@@ -38,6 +38,7 @@ List of contributors (ideas and codewise) from @digicademy's wonderful team:
 
 * Aline Deicke
 * Andreas Kuczera
+* Max Grüntgens
 * Michael Haft
 * Jörg Hambuch
 * Julian Jarosch
