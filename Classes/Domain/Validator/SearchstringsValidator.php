@@ -88,7 +88,6 @@ class SearchstringsValidator extends \TYPO3\CMS\Extbase\Validation\Validator\Abs
                         case 10:
                         case 20:
                         case 30:
-                            continue;
                             break;
                         default:
                             $this->addError('Invalid value for searchstring operator.', 1322670699);
