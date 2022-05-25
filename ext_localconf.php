@@ -8,7 +8,7 @@ $EXTCONF = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hisodat'])
 
 // CONFIGURE PLUGINS
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Sources',
     array(
         'Sources' => 'list, show, sort',
@@ -19,7 +19,7 @@ $EXTCONF = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hisodat'])
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Registers',
     array(
         'Registers' => 'list, search',
@@ -42,7 +42,7 @@ $EXTCONF = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hisodat'])
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Search',
     array(
         'Sources' => 'searchform, searchresult, searchdetails, sort, customSearchResult, customSearchDetails',
@@ -53,7 +53,7 @@ $EXTCONF = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hisodat'])
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Resolver',
     array(
         'Resolver' => 'resolve',

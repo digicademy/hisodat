@@ -4,43 +4,43 @@ if (!defined('TYPO3_MODE')) {
 }
 
 // TYPOSCRIPT
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript',
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('hisodat', 'Configuration/TypoScript',
     'HISODAT: Base Application');
 
 // REGISTER PLUGINS
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Sources',
     'HISODAT: Sources'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Registers',
     'HISODAT: Registers'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Search',
     'HISODAT: Search'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'ADWLM.' . $_EXTKEY,
+    'ADWLM.hisodat',
     'Resolver',
     'HISODAT: URI Resolver'
 );
 
 // FLEXFORMS FOR PLUGINS
 $TCA['tt_content']['types']['list']['subtypes_addlist']['hisodat_sources'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_sources', 'FILE:EXT:' . $_EXTKEY . '/Configuration/Flexforms/SourcesPlugin.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_sources', 'FILE:EXT:hisodat' . '/Configuration/Flexforms/SourcesPlugin.xml');
 
 $TCA['tt_content']['types']['list']['subtypes_addlist']['hisodat_search'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_search', 'FILE:EXT:' . $_EXTKEY . '/Configuration/Flexforms/SearchPlugin.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_search', 'FILE:EXT:hisodat' . '/Configuration/Flexforms/SearchPlugin.xml');
 
 $TCA['tt_content']['types']['list']['subtypes_addlist']['hisodat_registers'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_registers', 'FILE:EXT:' . $_EXTKEY . '/Configuration/Flexforms/RegistersPlugin.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('hisodat_registers', 'FILE:EXT:hisodat' . '/Configuration/Flexforms/RegistersPlugin.xml');
 
 // TABLE CONFIGURATION
 
